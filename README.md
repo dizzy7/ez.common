@@ -1,14 +1,16 @@
-Создать каталог /local/components/md/, в нем сделать git clone https://github.com/dizzy7/bitrix-shopmap
+Создать каталог /local/components/md/, в нем клонировать репозиторий https://github.com/dizzy7/bitrix-shopmap, либо скачать [архив](https://github.com/dizzy7/bitrix-shopmap/archive/master.zip) и распаковать
 
-Подключение на страницу:
-<?$APPLICATION->IncludeComponent(
+Подключить на страницу можно через визуальный редактор, или встав код:
+```php
+$APPLICATION->IncludeComponent(
 	"md:bitrix-shopmap",
 	"",
 	Array(
 	   "IBLOCK_ID"=> 1 //ID инфоблока
 	),
 false
-);?>
+);
+```
 
-Инфоблок импортируется из файла iblock.xml
+Образец инфоблока можно  импортировать из файла iblock.xml.
 
