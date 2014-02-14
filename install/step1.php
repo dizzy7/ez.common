@@ -25,8 +25,8 @@
             "DIV"   => "md_shopmap"
         ),
         array(
-            'TITLE' => "Форма с телефоном",
-            'TAB'   => "Форма обратной связи с полем \"Телефон\"",
+            'TITLE' => "Формы",
+            'TAB'   => "Формы",
             "DIV"   => "md_feedback"
         ),
     ));
@@ -54,10 +54,18 @@
     <? $arSiteTabControl->EndTab(); ?>
 
     <? $arSiteTabControl->BeginNextTab(); ?>
+    <h2>Форма обратной связи с полем "Телефон"</h2>
     <table class="list-table">
         <tr>
             <td width="50%" align="right"><label for="install_feedback_template">Создать почтовое событие для формы</label></td>
-            <td><input type="checkbox" name="install_feedback_template" id="install_feedback_template" value="Y"></td>
+            <td><input type="checkbox" name="install_feedback_template" id="install_feedback_template" value="Y" checked></td>
+        </tr>
+    </table>
+    <h2>Форма "Заказать звонок"</h2>
+    <table class="list-table">
+        <tr>
+            <td width="50%" align="right"><label for="install_callback_template">Создать почтовое событие для формы</label></td>
+            <td><input type="checkbox" name="install_callback_template" id="install_callback_template" value="Y" checked></td>
         </tr>
     </table>
     <? $arSiteTabControl->EndTab(); ?>

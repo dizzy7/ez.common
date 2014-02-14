@@ -44,7 +44,11 @@ class md_common extends CModule
             }
 
             if ($_REQUEST['install_feedback_template'] == 'Y') {
-                $this->installMailTemplates();
+                $this->installFeedbackTemplates();
+            }
+
+            if ($_REQUEST['install_callback_template'] == 'Y') {
+                $this->installCallbackTemplates();
             }
         }
 
@@ -162,7 +166,7 @@ class md_common extends CModule
         );
     }
 
-    private function installMailTemplates()
+    private function installFeedbackTemplates()
     {
         //---------------------------Форма обратной связи с телефоном
         $desc = <<<TEXT
@@ -209,6 +213,56 @@ TEXT;
                 'EMAIL_FROM' => '#DEFAULT_EMAIL_FROM#',
                 'EMAIL_TO'   => '#EMAIL_TO#',
                 'SUBJECT'    => '#SITE_NAME#: Сообщение из формы обратной связи',
+                'BODY_TYPE'  => 'text',
+                'MESSAGE'    => $msg
+            )
+        );
+    }
+
+    private function installCallbackTemplates()
+    {
+        //---------------------------Форма обратной связи с телефоном
+        $desc = <<<TEXT
+#NAME# - Имя
+#PHONE# - Телефон
+#TIME# - Время звонка
+#EMAIL_FROM# - Адрес отправителя
+#EMAIL_TO# - Адрес получателя
+TEXT;
+
+
+        $et = new CEventType;
+        $et->Add(
+            array(
+                "LID"         => 'ru',
+                "EVENT_NAME"  => 'CALLBACK_FORM',
+                "NAME"        => 'Отправка формы заказа звонка',
+                "DESCRIPTION" => $desc
+            )
+        );
+
+        $msg = <<<TEXT
+Информационное сообщение сайта #SITE_NAME#
+------------------------------------------
+
+Вам было отправлено сообщение через форму обратной связи
+
+Автор: #NAME#
+Телефон: #PHONE#
+Время звонка: #TIME#
+
+Сообщение сгенерировано автоматически.
+TEXT;
+
+        $emess = new CEventMessage;
+        $emess->Add(
+            array(
+                'ACTIVE'     => 'Y',
+                'EVENT_NAME' => 'CALLBACK_FORM',
+                'LID'        => 's1',
+                'EMAIL_FROM' => '#DEFAULT_EMAIL_FROM#',
+                'EMAIL_TO'   => '#EMAIL_TO#',
+                'SUBJECT'    => '#SITE_NAME#: Заказ звонка с сайта',
                 'BODY_TYPE'  => 'text',
                 'MESSAGE'    => $msg
             )
