@@ -1,7 +1,7 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();?>
 
 <?CJSCore::Init(array('jquery'))?>
-<?$APPLICATION->AddHeadScript('/local/components/md/bitrix-shopmap/templates/.default/shops.js')?>
+<?$APPLICATION->AddHeadScript($templateFolder.'/shops.js')?>
 <?$APPLICATION->AddHeadScript('http://api-maps.yandex.ru/2.0/?load=package.standard&lang=ru-RU')?>
 
 <div id="map"></div>
