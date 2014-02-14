@@ -2,42 +2,49 @@
 IncludeModuleLangFile(__FILE__);
 
 
-if(class_exists('md_common'))
+if (class_exists('md_common')) {
     return;
+}
 
-class md_common extends CModule {
+class md_common extends CModule
+{
     public $MODULE_ID = 'md.common';
     public $MODULE_VERSION;
     public $MODULE_VERSION_DATE;
     public $MODULE_NAME;
     public $MODULE_DESCRIPTION;
-    public $MODULE_CSS;
+    public $PARTNER_NAME = 'Медиасфера';
+    public $PARTNER_URI = 'http://www.media-sfera.com';
 
     public $START_TYPE = 'WINDOW';
     public $WIZARD_TYPE = "INSTALL";
 
-    public function md_common(){
+    public function md_common()
+    {
         $arModuleVersion = array();
-        include(__DIR__.'/version.php');
-        $this->MODULE_VERSION = $arModuleVersion['VERSION'];
+        include(__DIR__ . '/version.php');
+        $this->MODULE_VERSION      = $arModuleVersion['VERSION'];
         $this->MODULE_VERSION_DATE = $arModuleVersion['VERSION_DATE'];
-        $this->MODULE_NAME = "Готовые решения Медиасферы";
-        $this->MODULE_DESCRIPTION = "Набор готовых компонентов на разные случаи жизни";
+        $this->MODULE_NAME         = "Готовые решения Медиасферы";
+        $this->MODULE_DESCRIPTION  = "Набор готовых компонентов на разные случаи жизни";
     }
 
     public function DoInstall()
     {
         global $APPLICATION, $step;
         $step = IntVal($step);
-        if ($step < 2)
-            $APPLICATION->IncludeAdminFile("Установка модуля", __DIR__.'/step1.php');
-        elseif($step==2)
-        {
+        if ($step < 2) {
+            $APPLICATION->IncludeAdminFile("Установка модуля", __DIR__ . '/step1.php');
+        } elseif ($step == 2) {
             $this->InstallFiles();
             $this->InstallDB();
 
-            if($_REQUEST['install_shopmap_iblock']=='Y' && $_REQUEST['install_shopmap_iblock_type']){
+            if ($_REQUEST['install_shopmap_iblock'] == 'Y' && $_REQUEST['install_shopmap_iblock_type']) {
                 $this->CreateShopMapIblock($_REQUEST['install_shopmap_iblock_type']);
+            }
+
+            if ($_REQUEST['install_feedback_template'] == 'Y') {
+                $this->installMailTemplates();
             }
         }
 
@@ -61,7 +68,7 @@ class md_common extends CModule {
 
     function InstallFiles()
     {
-        CopyDirFiles(__DIR__.'/components',$_SERVER['DOCUMENT_ROOT'].'/bitrix/components/md',true,true);
+        CopyDirFiles(__DIR__ . '/components', $_SERVER['DOCUMENT_ROOT'] . '/bitrix/components/md', true, true);
 
         return true;
     }
@@ -77,7 +84,7 @@ class md_common extends CModule {
 
         //Создание инфоблока
         $iblock = new CIBlock;
-        $ID = $iblock->Add(
+        $ID     = $iblock->Add(
             array(
                 'ACTIVE'         => 'Y',
                 'NAME'           => 'Объекты на карте',
@@ -151,6 +158,59 @@ class md_common extends CModule {
                 "PROPERTY_TYPE" => "S",
                 "USER_TYPE"     => "map_yandex",
                 "IBLOCK_ID"     => $ID,
+            )
+        );
+    }
+
+    private function installMailTemplates()
+    {
+        //---------------------------Форма обратной связи с телефоном
+        $desc = <<<TEXT
+#AUTHOR# - Имя
+#AUTHOR_EMAIL# - E-mail
+#AUTHOR_PHONE# - Телефон
+#TEXT# - Текст вообщения
+#EMAIL_FROM# - Адрес отправителя
+#EMAIL_TO# - Адрес получателя
+TEXT;
+
+
+        $et = new CEventType;
+        $et->Add(
+            array(
+                "LID"         => 'ru',
+                "EVENT_NAME"  => 'FEEDBACK_PHONE_FORM',
+                "NAME"        => 'Отправка формы обратной связи с телефоном на почту',
+                "DESCRIPTION" => $desc
+            )
+        );
+
+        $msg = <<<TEXT
+Информационное сообщение сайта #SITE_NAME#
+------------------------------------------
+
+Вам было отправлено сообщение через форму обратной связи
+
+Автор: #AUTHOR#
+E-mail автора: #AUTHOR_EMAIL#
+
+Текст сообщения:
+#TEXT#
+
+Сообщение сгенерировано автоматически.
+TEXT;
+
+        $emess = new CEventMessage;
+        $emess->Add(
+            array(
+                'ACTIVE'     => 'Y',
+                'EVENT_NAME' => 'FEEDBACK_PHONE_FORM',
+                'LID'        => 's1',
+                'EMAIL_FROM' => '#DEFAULT_EMAIL_FROM#',
+                'EMAIL_TO'   => '#EMAIL_TO#',
+                'SUBJECT'    => '#SITE_NAME#: Сообщение из формы обратной связи',
+                'BODY_TYPE'  => 'text',
+                'MESSAGE'    => $msg
             )
         );
     }

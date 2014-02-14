@@ -24,6 +24,11 @@
             'TAB'   => "Объекты на карте",
             "DIV"   => "md_shopmap"
         ),
+        array(
+            'TITLE' => "Форма с телефоном",
+            'TAB'   => "Форма обратной связи с полем \"Телефон\"",
+            "DIV"   => "md_feedback"
+        ),
     ));
     $arSiteTabControl->Begin();
     ?>
@@ -48,11 +53,21 @@
     </table>
     <? $arSiteTabControl->EndTab(); ?>
 
-    <br>
-    <input type="submit" name="inst" value="<?= GetMessage("MOD_INSTALL") ?>">
+    <? $arSiteTabControl->BeginNextTab(); ?>
+    <table class="list-table">
+        <tr>
+            <td width="50%" align="right"><label for="install_feedback_template">Создать почтовое событие для формы</label></td>
+            <td><input type="checkbox" name="install_feedback_template" id="install_feedback_template" value="Y"></td>
+        </tr>
+    </table>
+    <? $arSiteTabControl->EndTab(); ?>
+
     <?
     $arSiteTabControl->End();
     ?>
+
+    <br>
+    <input type="submit" name="inst" value="<?= GetMessage("MOD_INSTALL") ?>">
 
 </form>
 
