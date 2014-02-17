@@ -38,6 +38,7 @@ class md_common extends CModule
         } elseif ($step == 2) {
             $this->InstallFiles();
             $this->InstallDB();
+            $this->InstallEvents();
 
             if ($_REQUEST['install_shopmap_iblock'] == 'Y' && $_REQUEST['install_shopmap_iblock_type']) {
                 $this->CreateShopMapIblock($_REQUEST['install_shopmap_iblock_type']);
@@ -50,14 +51,29 @@ class md_common extends CModule
             if ($_REQUEST['install_callback_template'] == 'Y') {
                 $this->installCallbackTemplates();
             }
+
+
         }
 
+    }
+
+    function InstallEvents($arParams = array())
+    {
+        RegisterModuleDependences('main', 'OnBeforeProlog', $this->MODULE_ID, 'MdDebug', 'OnBeforeProlog');
+        return true;
+    }
+
+    function UnInstallEvents($arParams = array())
+    {
+        UnRegisterModuleDependences('main', 'OnBeforeProlog', $this->MODULE_ID, 'MdDebug', 'OnBeforeProlog');
+        return true;
     }
 
     public function DoUninstall()
     {
         $this->unInstallFiles();
         $this->unInstallDB();
+        $this->UnInstallEvents();
     }
 
     function InstallDB()

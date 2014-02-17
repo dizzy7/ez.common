@@ -1,0 +1,166 @@
+[
+    {
+        "name": "leeoniya/dump-r",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/leeoniya/dump_r.php.git",
+            "reference": "fdec685891c63b7a48f1286a43f9b7349cbf5601"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/leeoniya/dump_r.php/zipball/fdec685891c63b7a48f1286a43f9b7349cbf5601",
+            "reference": "fdec685891c63b7a48f1286a43f9b7349cbf5601",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "suggest": {
+            "jdorn/sql-formatter": "Pretty-print dumped SQL strings"
+        },
+        "time": "2013-05-05 07:53:39",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "files": [
+                "dump_r.php"
+            ],
+            "psr-0": {
+                "dump_r": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Leon Sorokin",
+                "email": "leeoniya@gmail.com",
+                "homepage": "https://github.com/leeoniya",
+                "role": "Developer"
+            }
+        ],
+        "description": "a cleaner, leaner mix of print_r() and var_dump()",
+        "homepage": "https://github.com/leeoniya/dump_r.php",
+        "keywords": [
+            "debug",
+            "dump",
+            "pretty",
+            "print",
+            "print_r",
+            "var_dump"
+        ]
+    },
+    {
+        "name": "jdorn/sql-formatter",
+        "version": "v1.2.17",
+        "version_normalized": "1.2.17.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/jdorn/sql-formatter.git",
+            "reference": "64990d96e0959dff8e059dfcdc1af130728d92bc"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/jdorn/sql-formatter/zipball/64990d96e0959dff8e059dfcdc1af130728d92bc",
+            "reference": "64990d96e0959dff8e059dfcdc1af130728d92bc",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2.4"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "3.7.*"
+        },
+        "time": "2014-01-12 16:20:24",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.3.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "lib"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jeremy Dorn",
+                "email": "jeremy@jeremydorn.com",
+                "homepage": "http://jeremydorn.com/"
+            }
+        ],
+        "description": "a PHP SQL highlighting library",
+        "homepage": "https://github.com/jdorn/sql-formatter/",
+        "keywords": [
+            "highlight",
+            "sql"
+        ]
+    },
+    {
+        "name": "php-console/php-console",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/barbushin/php-console.git",
+            "reference": "0a9197a1b756608fd0006180dd676c9a8d2d4f7d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/barbushin/php-console/zipball/0a9197a1b756608fd0006180dd676c9a8d2d4f7d",
+            "reference": "0a9197a1b756608fd0006180dd676c9a8d2d4f7d",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "suggest": {
+            "php-console/laravel-service-provider": "*",
+            "php-console/silex-service-provider": "*"
+        },
+        "time": "2014-02-05 04:31:30",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "PhpConsole": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD 3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Sergey Barbushin",
+                "email": "barbushin@gmail.com",
+                "homepage": "http://linkedin.com/in/barbushin"
+            }
+        ],
+        "description": "Server side PHP library for Google Chrome extension \"PHP Console\".",
+        "homepage": "https://github.com/barbushin/php-console",
+        "keywords": [
+            "chrome",
+            "debug",
+            "error handler",
+            "errors",
+            "google chrome",
+            "php"
+        ]
+    }
+]
