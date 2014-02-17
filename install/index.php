@@ -65,13 +65,15 @@ class md_common extends CModule
 
     function InstallEvents($arParams = array())
     {
-        RegisterModuleDependences('main', 'OnBeforeProlog', $this->MODULE_ID, 'MdDebug', 'OnBeforeProlog');
+        RegisterModuleDependences('main', 'OnBeforeProlog', $this->MODULE_ID, 'MdCommon', 'OnBeforeProlog');
+        RegisterModuleDependences('main', 'OnBuildGlobalMenu', $this->MODULE_ID, 'MdCommon', 'OnBuildGlobalMenu');
         return true;
     }
 
     function UnInstallEvents($arParams = array())
     {
-        UnRegisterModuleDependences('main', 'OnBeforeProlog', $this->MODULE_ID, 'MdDebug', 'OnBeforeProlog');
+        UnRegisterModuleDependences('main', 'OnBeforeProlog', $this->MODULE_ID, 'MdCommon', 'OnBeforeProlog');
+        UnRegisterModuleDependences('main', 'OnBuildGlobalMenu', $this->MODULE_ID, 'MdCommon', 'OnBuildGlobalMenu');
         return true;
     }
 
@@ -95,6 +97,7 @@ class md_common extends CModule
     function InstallFiles()
     {
         CopyDirFiles(__DIR__ . '/components', $_SERVER['DOCUMENT_ROOT'] . '/bitrix/components/md', true, true);
+        CopyDirFiles(__DIR__ . '/admin', $_SERVER['DOCUMENT_ROOT'] . '/bitrix/admin', true, true);
 
         return true;
     }
@@ -102,6 +105,7 @@ class md_common extends CModule
     function UnInstallFiles()
     {
         DeleteDirFilesEx('/bitrix/components/md');
+        DeleteDirFiles(__DIR__.'/admin',$_SERVER['DOCUMENT_ROOT'].'/bitrix/admin');
     }
 
     private function CreateShopMapIblock($iblockType)

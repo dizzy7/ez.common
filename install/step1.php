@@ -86,12 +86,16 @@
     </table>
     <? $arSiteTabControl->EndTab(); ?>
 
+    <?$tabControl->Buttons();?>
+
+    <br>
+    <input type="submit" name="inst" value="<?= GetMessage("MOD_INSTALL") ?>">
+
     <?
     $arSiteTabControl->End();
     ?>
 
-    <br>
-    <input type="submit" name="inst" value="<?= GetMessage("MOD_INSTALL") ?>">
+
 
 </form>
 
