@@ -53,7 +53,7 @@ function shopmap_init() {
                 text += '<br><a href="'+item.site+'">'+item.site+'</a>'
             }
 
-            var submenuItem = $('<li><a href="#">' + item.text + '</a></li>'),
+            var submenuItem = $('<li><a href="#">' + item.name + '</a></li>'),
             // Создаем метку.
                 placemark = new ymaps.Placemark(item.center, {
                     balloonContentHeader: item.name,

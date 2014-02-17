@@ -10,6 +10,8 @@ class MdCommon {
             $connector = \PhpConsole\Connector::getInstance();
             $connector->setPassword('111');
             \PhpConsole\Helper::register($connector);
+        } else {
+            require_once __DIR__.'/phpconsole_stub.php';
         }
     }
 

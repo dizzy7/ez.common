@@ -2,9 +2,24 @@
 
 if($this->StartResultCache(3600)){
     CModule::IncludeModule('iblock');
+
+    $arFilter = array('IBLOCK_ID'=>$arParams['IBLOCK_ID']);
+
+    if(isset($_GET['s'])){
+        $arFilter[]=array(
+            'LOGIC'=>'OR',
+            '%NAME'=>$_GET['search'],
+            '%PROPERTY_CITY_VALUE'=>$_GET['search'],
+            '%PROPERTY_ADDRESS'=>$_GET['search'],
+        );
+        if($_GET['type'] && $_GET['type']!='Все'){
+            $arFilter['PROPERTY_TYPE']=$_GET['type'];
+        }
+    }
+
     $res = CIBlockElement::GetList(
         array('PROPERTY_CITY','ASC'),
-        array('IBLOCK_ID'=>$arParams['IBLOCK_ID'])
+        $arFilter
     );
 
     while($cib = $res->GetNextElement()){
@@ -53,7 +68,11 @@ if($this->StartResultCache(3600)){
         $json[]=$shop;
     }
 
+    PC::debug($arResult['SHOPS']);
+
     $arResult['SHOPS'] = json_encode($json);
+
+
 
     $this->IncludeComponentTemplate();
 }

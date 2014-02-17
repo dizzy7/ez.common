@@ -96,7 +96,7 @@ class md_common extends CModule
 
     function InstallFiles()
     {
-        CopyDirFiles(__DIR__ . '/components', $_SERVER['DOCUMENT_ROOT'] . '/bitrix/components/md', true, true);
+        CopyDirFiles(__DIR__ . '/components', $_SERVER['DOCUMENT_ROOT'] . '/bitrix/components/mediasfera', true, true);
         CopyDirFiles(__DIR__ . '/admin', $_SERVER['DOCUMENT_ROOT'] . '/bitrix/admin', true, true);
 
         return true;
@@ -104,7 +104,7 @@ class md_common extends CModule
 
     function UnInstallFiles()
     {
-        DeleteDirFilesEx('/bitrix/components/md');
+        DeleteDirFilesEx('/bitrix/components/mediasfera');
         DeleteDirFiles(__DIR__.'/admin',$_SERVER['DOCUMENT_ROOT'].'/bitrix/admin');
     }
 
@@ -142,6 +142,21 @@ class md_common extends CModule
                 "VALUES"        => array(
                     array('VALUE' => 'Москва', 'DEF' => 'N', 'SORT' => 1),
                     array('VALUE' => 'Санкт-Петербург', 'DEF' => 'N', 'SORT' => 2),
+                )
+            )
+        );
+
+        $ibp->Add(
+            Array(
+                "NAME"          => "Тип",
+                "ACTIVE"        => "Y",
+                "SORT"          => "100",
+                "CODE"          => "TYPE",
+                "PROPERTY_TYPE" => "L",
+                "IBLOCK_ID"     => $ID,
+                "VALUES"        => array(
+                    array('VALUE' => 'Розничные магазины', 'DEF' => 'N', 'SORT' => 1),
+                    array('VALUE' => 'Оптовики', 'DEF' => 'N', 'SORT' => 2),
                 )
             )
         );
