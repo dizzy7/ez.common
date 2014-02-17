@@ -52,6 +52,12 @@ class md_common extends CModule
                 $this->installCallbackTemplates();
             }
 
+            if ($_REQUEST['enable_phpconsole'] == 'Y') {
+                $this->enablePhpConsole();
+            } else {
+                $this->disablePhpConsole();
+            }
+
 
         }
 
@@ -283,6 +289,16 @@ TEXT;
                 'MESSAGE'    => $msg
             )
         );
+    }
+
+    private function enablePhpConsole()
+    {
+        COption::SetOptionString('md.common','phpconsole','Y');
+    }
+
+    private function disablePhpConsole()
+    {
+        COption::SetOptionString('md.common','phpconsole','N');
     }
 
 }

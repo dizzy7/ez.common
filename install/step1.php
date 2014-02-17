@@ -29,6 +29,11 @@
             'TAB'   => "Формы",
             "DIV"   => "md_feedback"
         ),
+        array(
+            'TITLE' => "Отладка",
+            'TAB'   => "Отладка",
+            "DIV"   => "md_debug"
+        ),
     ));
     $arSiteTabControl->Begin();
     ?>
@@ -66,6 +71,17 @@
         <tr>
             <td width="50%" align="right"><label for="install_callback_template">Создать почтовое событие для формы</label></td>
             <td><input type="checkbox" name="install_callback_template" id="install_callback_template" value="Y"></td>
+        </tr>
+    </table>
+    <? $arSiteTabControl->EndTab(); ?>
+
+    <? $arSiteTabControl->BeginNextTab(); ?>
+    <h2>Отладка</h2>
+    <h3>Фунция dump-r всегда подключена!</h3>
+    <table class="list-table">
+        <tr>
+            <td width="50%" align="right"><label for="enable_phpconsole">Включить <a href="https://github.com/phpconsole/phpconsole" target="_blank">php-console</a></label></td>
+            <td><input type="checkbox" name="enable_phpconsole" id="enable_phpconsole" value="Y"></td>
         </tr>
     </table>
     <? $arSiteTabControl->EndTab(); ?>
