@@ -1,3 +1,3 @@
 <?php
 
-CModule::AddAutoloadClasses('md.common', array('MdDebug' => 'classes/mdcommon.php'));
+CModule::AddAutoloadClasses('md.common', array('MdCommon' => 'classes/mdcommon.php'));
