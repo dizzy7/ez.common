@@ -6,9 +6,12 @@ class MdCommon {
         require_once __DIR__.'/../vendor/autoload.php';
 
         $phpc = COption::GetOptionString('md.common','phpconsole','N');
+        $phppass = COption::GetOptionString('md.common','phpconsolepass','');
         if($phpc=='Y'){
             $connector = \PhpConsole\Connector::getInstance();
-            $connector->setPassword('111');
+            if($phppass){
+                $connector->setPassword($phppass);
+            }
             \PhpConsole\Helper::register($connector);
         } else {
             require_once __DIR__.'/phpconsole_stub.php';

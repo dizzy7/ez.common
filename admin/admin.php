@@ -20,9 +20,16 @@ $tabControl = new CAdminTabControl("tabControl", $aTabs);?>
     ?>
     <tr valign="top">
         <td width="40%" class="field-name">Включить <a href="https://github.com/phpconsole/phpconsole" target="_blank">php-console</a></td>
-        <td valign="middle">
+        <td>
             <?$phpc = COption::GetOptionString("md.common", "phpconsole", "N");?>
             <input type="checkbox" <?=$phpc == "Y"?"checked=\"checked\"":"";?> name="phpconsole" value="Y"/>
+        </td>
+    </tr>
+    <tr valign="top">
+        <td width="40%" class="field-name">Пароль phpconsole</td>
+        <td>
+            <?$phpc = COption::GetOptionString("md.common", "phpconsolepass", "");?>
+            <input name="phpconsolepass" type="password" value="<?=$phpc?>" />
         </td>
     </tr>
     <?
