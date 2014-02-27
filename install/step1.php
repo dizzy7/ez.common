@@ -11,23 +11,17 @@
     <input type="hidden" name="install" value="Y">
     <input type="hidden" name="step" value="2">
 
-    <script>
-        function ChangeShopmapIblock() {
-
-        }
-    </script>
-
     <?
     $arSiteTabControl = new CAdminViewTabControl("siteTabControl", array(
         array(
-            'TITLE' => "Объекты на карте",
-            'TAB'   => "Объекты на карте",
-            "DIV"   => "md_shopmap"
+            'TITLE' => "Компоненты",
+            'TAB'   => "Компоненты",
+            "DIV"   => "md_components"
         ),
         array(
             'TITLE' => "Формы",
             'TAB'   => "Формы",
-            "DIV"   => "md_feedback"
+            "DIV"   => "md_forms"
         ),
         array(
             'TITLE' => "Отладка",
@@ -39,16 +33,33 @@
     ?>
 
     <? $arSiteTabControl->BeginNextTab(); ?>
+    <h3>Объекты на карте</h3>
     <table class="list-table">
         <tr>
             <td width="50%" align="right"><label for="install_shopmap_iblock">Создать инфоблок для карты объектов</label></td>
-            <td><input type="checkbox" name="install_shopmap_iblock" id="install_shopmap_iblock" value="Y"
-                       onclick="ChangeShopmapIblock()"></td>
+            <td><input type="checkbox" name="install_shopmap_iblock" id="install_shopmap_iblock" value="Y"></td>
         </tr>
         <tr>
             <td width="50%" align="right"><label for="install_shopmap_iblock_type">Тип информационного блока</label></td>
             <td>
                 <select name="install_shopmap_iblock_type" id="install_shopmap_iblock_type" disabled>
+                    <?foreach($arTypesEx as $id=>$name):?>
+                        <option value="<?=$id?>"><?=$name?></option>
+                    <?endforeach;?>
+                </select>
+            </td>
+        </tr>
+    </table>
+    <h3>Баннеры с привязкой к страницам</h3>
+    <table class="list-table">
+        <tr>
+            <td width="50%" align="right"><label for="install_banners_iblock">Создать инфоблок для баннеров</label></td>
+            <td><input type="checkbox" name="install_banners_iblock" id="install_banners_iblock" value="Y"></td>
+        </tr>
+        <tr>
+            <td width="50%" align="right"><label for="install_banners_iblock_type">Тип информационного блока</label></td>
+            <td>
+                <select name="install_banners_iblock_type" id="install_banners_iblock_type" disabled>
                     <?foreach($arTypesEx as $id=>$name):?>
                         <option value="<?=$id?>"><?=$name?></option>
                     <?endforeach;?>
@@ -103,6 +114,14 @@
                 $("#install_shopmap_iblock_type").removeAttr('disabled');
             } else {
                 $("#install_shopmap_iblock_type").attr('disabled','disabled');
+            }
+        });
+
+        $("#install_banners_iblock").on('change',function(e){
+            if($(this).is(':checked')){
+                $("#install_banners_iblock_type").removeAttr('disabled');
+            } else {
+                $("#install_banners_iblock_type").attr('disabled','disabled');
             }
         });
     });
