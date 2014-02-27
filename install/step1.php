@@ -94,6 +94,10 @@
             <td width="50%" align="right"><label for="enable_phpconsole">Включить <a href="https://github.com/phpconsole/phpconsole" target="_blank">php-console</a></label></td>
             <td><input type="checkbox" name="enable_phpconsole" id="enable_phpconsole" value="Y"></td>
         </tr>
+        <tr>
+            <td width="50%" align="right"><label for="pass_phpconsole">Пароль php-console</a></label></td>
+            <td><input type="password" name="pass_phpconsole" id="pass_phpconsole"></td>
+        </tr>
     </table>
     <? $arSiteTabControl->EndTab(); ?>
 

@@ -57,7 +57,7 @@ class md_common extends CModule
             }
 
             if ($_REQUEST['enable_phpconsole'] == 'Y') {
-                $this->enablePhpConsole();
+                $this->enablePhpConsole($_REQUEST['pass_phpconsole']);
             } else {
                 $this->disablePhpConsole();
             }
@@ -372,9 +372,10 @@ TEXT;
         );
     }
 
-    private function enablePhpConsole()
+    private function enablePhpConsole($pass)
     {
         COption::SetOptionString('md.common','phpconsole','Y');
+        COption::SetOptionString('md.common','phpconsolepass',$pass);
     }
 
     private function disablePhpConsole()
