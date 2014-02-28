@@ -7,7 +7,8 @@ $arComponentDescription = array(
     "ICON" => "/images/slider.gif",
     "SORT" => 20,
     "SCREENSHOT" => array(
-        "/images/small.png",
+        "/images/s_orange.png",
+        "/images/s_small.png",
     ),
     "CACHE_PATH" => "Y",
     "PATH" => array(
