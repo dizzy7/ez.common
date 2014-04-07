@@ -25,7 +25,6 @@ while($arr = $res->GetNext()){
     );
 }
 
-PC::debug($arParams);
 return $links;
 
 ?>
