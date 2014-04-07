@@ -1,0 +1,22 @@
+div.file {
+    padding-left: 25px;
+    margin-bottom: 10px;
+}
+
+
+
+div.pdf {
+    background: url(images/pdf.png) no-repeat;
+}
+
+div.xls {
+    background: url(images/pdf.png) no-repeat;
+}
+
+div.doc {
+    background: url(images/doc.png) no-repeat;
+}
+
+div.other {
+    background: url(images/other.png) no-repeat;
+}

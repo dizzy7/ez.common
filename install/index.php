@@ -48,6 +48,10 @@ class md_common extends CModule
                 $this->CreateBannersMapIblock($_REQUEST['install_banners_iblock_type']);
             }
 
+            if ($_REQUEST['install_documents_iblock'] == 'Y' && $_REQUEST['install_documents_iblock_type']) {
+                $this->CreateDocumentsIblock($_REQUEST['install_documents_iblock_type']);
+            }
+
             if ($_REQUEST['install_feedback_template'] == 'Y') {
                 $this->installFeedbackTemplates();
             }
@@ -264,6 +268,39 @@ class md_common extends CModule
                     array('VALUE' => 'Новом окне', 'DEF' => 'Y', 'SORT' => 1,'XML_ID'=>'51661d325d44c07238ad507c283500c3'),
                     array('VALUE' => 'Текущем окне', 'DEF' => 'N', 'SORT' => 2,'XML_ID'=>'8124aa27195b9141187f3e7fccd937b0'),
                 )
+            )
+        );
+
+    }
+
+    private function CreateDocumentsIblock($iblockType)
+    {
+        CModule::IncludeModule('iblock');
+
+        //Создание инфоблока
+        $iblock = new CIBlock;
+        $ID     = $iblock->Add(
+            array(
+                'ACTIVE'         => 'Y',
+                'NAME'           => 'Документы',
+                'CODE'           => 'documents',
+                'IBLOCK_TYPE_ID' => $iblockType,
+                'SITE_ID'        => 's1',
+                'GROUP_ID'       => Array("2" => "R", "3" => "R"),
+            )
+        );
+
+        //Создание свойств
+        $ibp = new CIBlockProperty;
+
+        $ibp->Add(
+            array(
+                "NAME"          => "Файл",
+                "CODE"          => "FILE",
+                "SORT"          => "100",
+                "ACTIVE"        => "Y",
+                "PROPERTY_TYPE" => "F",
+                "IBLOCK_ID"     => $ID,
             )
         );
 
