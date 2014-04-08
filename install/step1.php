@@ -1,3 +1,25 @@
+<?IncludeModuleLangFile(__FILE__);?>
+
+<?
+$arSiteTabControl = new CAdminViewTabControl("siteTabControl", array(
+    array(
+        'TITLE' => "Компоненты",
+        'TAB'   => "Компоненты",
+        "DIV"   => "md_components"
+    ),
+    array(
+        'TITLE' => "Формы",
+        'TAB'   => "Формы",
+        "DIV"   => "md_forms"
+    ),
+    array(
+        'TITLE' => "Отладка",
+        'TAB'   => "Отладка",
+        "DIV"   => "md_debug"
+    ),
+));
+?>
+
 <form action="<?= $APPLICATION->GetCurPage() ?>" name="md_common_install">
     <?= bitrix_sessid_post() ?>
 
@@ -11,27 +33,7 @@
     <input type="hidden" name="install" value="Y">
     <input type="hidden" name="step" value="2">
 
-    <?
-    $arSiteTabControl = new CAdminViewTabControl("siteTabControl", array(
-        array(
-            'TITLE' => "Компоненты",
-            'TAB'   => "Компоненты",
-            "DIV"   => "md_components"
-        ),
-        array(
-            'TITLE' => "Формы",
-            'TAB'   => "Формы",
-            "DIV"   => "md_forms"
-        ),
-        array(
-            'TITLE' => "Отладка",
-            'TAB'   => "Отладка",
-            "DIV"   => "md_debug"
-        ),
-    ));
-    $arSiteTabControl->Begin();
-    ?>
-
+    <?$arSiteTabControl->Begin();?>
     <? $arSiteTabControl->BeginNextTab(); ?>
     <h3>Объекты на карте</h3>
     <table class="list-table">
@@ -84,7 +86,7 @@
             </td>
         </tr>
     </table>
-    <? $arSiteTabControl->EndTab(); ?>
+<!--    --><?// $arSiteTabControl->EndTab(); ?>
 
     <? $arSiteTabControl->BeginNextTab(); ?>
     <h2>Форма обратной связи с полем "Телефон"</h2>
@@ -101,7 +103,7 @@
             <td><input type="checkbox" name="install_callback_template" id="install_callback_template" value="Y"></td>
         </tr>
     </table>
-    <? $arSiteTabControl->EndTab(); ?>
+<!--    --><?// $arSiteTabControl->EndTab(); ?>
 
     <? $arSiteTabControl->BeginNextTab(); ?>
     <h2>Отладка</h2>
@@ -118,13 +120,9 @@
     </table>
     <? $arSiteTabControl->EndTab(); ?>
 
-    <?$arSiteTabControl->End()?>
-
     <br>
-    <input type="submit" name="inst" value="<?= GetMessage("MOD_INSTALL") ?>">
-
-
-
+    <input type="submit" name="inst" value="<?echo GetMessage("MOD_INSTALL")?>">
+    <? $arSiteTabControl->End()?>
 
 </form>
 
