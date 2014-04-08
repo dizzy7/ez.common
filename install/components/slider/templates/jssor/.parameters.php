@@ -8,5 +8,10 @@ $arTemplateParameters = array(
         "TYPE" => "STRING",
         "DEFAULT" => "600",
     ),
+    "HEIGHT" => Array(
+        "NAME" => "Высота",
+        "TYPE" => "STRING",
+        "DEFAULT" => "300",
+    ),
 );
 ?>

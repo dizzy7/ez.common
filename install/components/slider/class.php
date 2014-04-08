@@ -22,7 +22,8 @@ class ShopsmapComponent extends \MdCommon\MdComponent
     {
         return $this->setDefaultParams($arParams,
             array(
-                'WIDTH' => 300,
+                'WIDTH' => 600,
+                'HEIGHT'=> 300,
             )
         );
 
