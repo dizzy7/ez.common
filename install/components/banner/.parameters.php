@@ -12,15 +12,6 @@ $db_iblock = CIBlock::GetList(Array("SORT"=>"ASC"), Array("SITE_ID"=>$_REQUEST["
 while($arRes = $db_iblock->Fetch())
 	$arIBlocks[$arRes["ID"]] = $arRes["NAME"];
 
-$arSorts = Array("ASC"=>GetMessage("T_IBLOCK_DESC_ASC"), "DESC"=>GetMessage("T_IBLOCK_DESC_DESC"));
-$arSortFields = Array(
-		"ID"=>GetMessage("T_IBLOCK_DESC_FID"),
-		"NAME"=>GetMessage("T_IBLOCK_DESC_FNAME"),
-		"ACTIVE_FROM"=>GetMessage("T_IBLOCK_DESC_FACT"),
-		"SORT"=>GetMessage("T_IBLOCK_DESC_FSORT"),
-		"TIMESTAMP_X"=>GetMessage("T_IBLOCK_DESC_FTSAMP")
-	);
-
 $arComponentParameters = array(
 	"PARAMETERS" => array(
 		"IBLOCK_TYPE" => Array(
