@@ -47,7 +47,7 @@ class DocumentsComponent extends \MdCommon\MdComponent {
 
     public function onPrepareComponentParams($arParams)
     {
-        $this->setDefaultParams(array(
+        return $this->setDefaultParams($arParams,array(
                 'SORT_BY' => 'SORT',
                 'SORT_ORDER' => 'ASC',
             ));

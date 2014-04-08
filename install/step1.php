@@ -34,7 +34,25 @@ $arSiteTabControl = new CAdminViewTabControl("siteTabControl", array(
     <input type="hidden" name="step" value="2">
 
     <?$arSiteTabControl->Begin();?>
+
     <? $arSiteTabControl->BeginNextTab(); ?>
+    <h3>Слайдер</h3>
+    <table class="list-table">
+        <tr>
+            <td width="50%" align="right"><label for="install_slider_iblock">Создать инфоблок для слайдера</label></td>
+            <td><input type="checkbox" name="install_slider_iblock" id="install_slider_iblock" value="Y"></td>
+        </tr>
+        <tr>
+            <td width="50%" align="right"><label for="install_slider_iblock_type">Тип информационного блока</label></td>
+            <td>
+                <select name="install_slider_iblock_type" id="install_slider_iblock_type" disabled>
+                    <?foreach($arTypesEx as $id=>$name):?>
+                        <option value="<?=$id?>"><?=$name?></option>
+                    <?endforeach;?>
+                </select>
+            </td>
+        </tr>
+    </table>
     <h3>Объекты на карте</h3>
     <table class="list-table">
         <tr>
@@ -128,6 +146,15 @@ $arSiteTabControl = new CAdminViewTabControl("siteTabControl", array(
 
 <script type="text/javascript">
     $(function(){
+
+        $("#install_slider_iblock").on('change',function(e){
+            if($(this).is(':checked')){
+                $("#install_slider_iblock_type").removeAttr('disabled');
+            } else {
+                $("#install_slider_iblock_type").attr('disabled','disabled');
+            }
+        });
+
         $("#install_shopmap_iblock").on('change',function(e){
             if($(this).is(':checked')){
                 $("#install_shopmap_iblock_type").removeAttr('disabled');

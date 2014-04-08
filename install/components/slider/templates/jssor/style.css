@@ -1,0 +1,23 @@
+.jssorn02 div, .jssorn02 div:hover, .jssorn02 .av
+{
+    overflow:hidden;
+    cursor: pointer;
+}
+.jssorn02 div { background-position: -5px -5px; }
+.jssorn02 div:hover, .jssorn02 .av:hover { background-position: -35px -5px; }
+.jssorn02 .av { background-position: -65px -5px; }
+.jssorn02 .dn, .jssorn02 .dn:hover { background-position: -95px -5px; }
+
+
+#slider a[u="caption"] {
+    text-decoration: none;
+    position: relative;
+    z-index: 10;
+}
+
+#slider a[u="caption"]>div {
+    padding: 50px;
+    color: black;
+}
+
+

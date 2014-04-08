@@ -40,6 +40,10 @@ class md_common extends CModule
             $this->InstallDB();
             $this->InstallEvents();
 
+            if ($_REQUEST['install_slider_iblock'] == 'Y' && $_REQUEST['install_slider_iblock_type']) {
+                $this->CreateSliderMapIblock($_REQUEST['install_slider_iblock_type']);
+            }
+
             if ($_REQUEST['install_shopmap_iblock'] == 'Y' && $_REQUEST['install_shopmap_iblock_type']) {
                 $this->CreateShopMapIblock($_REQUEST['install_shopmap_iblock_type']);
             }
@@ -114,6 +118,39 @@ class md_common extends CModule
     {
         DeleteDirFilesEx('/bitrix/components/mediasfera');
         DeleteDirFiles(__DIR__.'/admin',$_SERVER['DOCUMENT_ROOT'].'/bitrix/admin');
+    }
+
+    private function CreateSliderMapIblock($iblockType)
+    {
+        CModule::IncludeModule('iblock');
+
+        //Создание инфоблока
+        $iblock = new CIBlock;
+        $ID     = $iblock->Add(
+            array(
+                'ACTIVE'         => 'Y',
+                'NAME'           => 'Слайдер',
+                'CODE'           => 'slider',
+                'IBLOCK_TYPE_ID' => $iblockType,
+                'SITE_ID'        => 's1',
+                'GROUP_ID'       => Array("2" => "R", "3" => "R"),
+            )
+        );
+
+        //Создание свойств
+        $ibp = new CIBlockProperty;
+
+        $ibp->Add(
+            Array(
+                "NAME"          => "Ссылка",
+                "ACTIVE"        => "Y",
+                "SORT"          => "100",
+                "CODE"          => "URL",
+                "PROPERTY_TYPE" => "S",
+                "IBLOCK_ID"     => $ID,
+            )
+        );
+
     }
 
     private function CreateShopMapIblock($iblockType)

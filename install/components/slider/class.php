@@ -11,13 +11,22 @@ class ShopsmapComponent extends \MdCommon\MdComponent
 
             while($arr = $res->GetNext()){
                 $arr['PREVIEW_PICTURE'] = CFile::GetPath($arr['PREVIEW_PICTURE']);
-                $arResult['ITEMS'][] = $arr;
+                $this->arResult['ITEMS'][] = $arr;
             }
 
             $this->IncludeComponentTemplate();
         }
     }
 
+    public function onPrepareComponentParams($arParams)
+    {
+        return $this->setDefaultParams($arParams,
+            array(
+                'WIDTH' => 300,
+            )
+        );
+
+    }
 
 
     private function getData()

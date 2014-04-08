@@ -7,15 +7,16 @@ abstract class Mdcomponent extends \CBitrixComponent {
     /**
      * Устанавливает значения по умолчанию для параметров, если они не заданы
      *
-     * @param array $params массив параметров "параметрт => значение по умолчанию"
+     * @param array $defaults массив параметров "параметрт => значение по умолчанию"
      *
-     * @return void
+     * @return array
      */
-    protected  function setDefaultParams($params){
-        foreach ($params as $param=>$value) {
+    protected  function setDefaultParams($arParams,$defaults){
+        foreach ($defaults as $param=>$value) {
             $this->setDefaultParam($param,$value);
         }
 
+        return array_merge($arParams,$defaults);
     }
 
     /**

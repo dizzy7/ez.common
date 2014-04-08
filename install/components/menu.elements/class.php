@@ -24,7 +24,7 @@ class MenuElementsComponent extends \MdCommon\MdComponent
 
     public function onPrepareComponentParams($arParams)
     {
-        $this->setDefaultParams(
+        return $this->setDefaultParams($arParams,
             array(
                 'LIMIT' => '20',
             )
