@@ -70,6 +70,12 @@ class md_common extends CModule
                 $this->disablePhpConsole();
             }
 
+            if($_REQUEST['enable_twig'] == 'Y') {
+                $this->enableTwig($_REQUEST['enable_twig_debug']);
+            } else {
+                $this->disableTwig();
+            }
+
 
         }
 
@@ -455,6 +461,18 @@ TEXT;
     private function disablePhpConsole()
     {
         COption::SetOptionString('md.common','phpconsole','N');
+    }
+
+    private function enableTwig($debug)
+    {
+        COption::SetOptionString('md.common','twig','Y');
+        COption::SetOptionString('md.common','twig.debug',$debug);
+    }
+
+    private function disableTwig()
+    {
+        COption::SetOptionString('md.common','twig','N');
+        COption::SetOptionString('md.common','twig.debug','N');
     }
 
 }

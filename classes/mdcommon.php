@@ -16,6 +16,12 @@ class MdCommon {
         } else {
             require_once __DIR__.'/phpconsole_stub.php';
         }
+
+        $twig = COption::GetOptionString('md.common','twig','N');
+        if($twig==='Y'){
+            require_once __DIR__.'/../twig/init.php';
+        }
+
     }
 
     function OnBuildGlobalMenu(&$aGlobalMenu, &$aModuleMenu)

@@ -17,10 +17,17 @@ $arSiteTabControl = new CAdminViewTabControl("siteTabControl", array(
         'TAB'   => "Отладка",
         "DIV"   => "md_debug"
     ),
+    array(
+        'TITLE' => "Twig",
+        'TAB'   => "Twig",
+        "DIV"   => "md_twig"
+    ),
 ));
 ?>
 
-<form action="<?= $APPLICATION->GetCurPage() ?>" name="md_common_install">
+<form action="<?=
+/** @var $APPLICATION CMain */
+$APPLICATION->GetCurPage() ?>" name="md_common_install">
     <?= bitrix_sessid_post() ?>
 
     <?
@@ -104,7 +111,6 @@ $arSiteTabControl = new CAdminViewTabControl("siteTabControl", array(
             </td>
         </tr>
     </table>
-<!--    --><?// $arSiteTabControl->EndTab(); ?>
 
     <? $arSiteTabControl->BeginNextTab(); ?>
     <h2>Форма обратной связи с полем "Телефон"</h2>
@@ -121,10 +127,8 @@ $arSiteTabControl = new CAdminViewTabControl("siteTabControl", array(
             <td><input type="checkbox" name="install_callback_template" id="install_callback_template" value="Y"></td>
         </tr>
     </table>
-<!--    --><?// $arSiteTabControl->EndTab(); ?>
 
     <? $arSiteTabControl->BeginNextTab(); ?>
-    <h2>Отладка</h2>
     <h3>Фунция dump-r всегда подключена!</h3>
     <table class="list-table">
         <tr>
@@ -136,7 +140,23 @@ $arSiteTabControl = new CAdminViewTabControl("siteTabControl", array(
             <td><input type="password" name="pass_phpconsole" id="pass_phpconsole"></td>
         </tr>
     </table>
+
+
+    <? $arSiteTabControl->BeginNextTab(); ?>
+    <table class="list-table">
+        <tr>
+            <td width="50%" align="right"><label for="enable_twig">Включить <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a></label></td>
+            <td><input type="checkbox" name="enable_twig" id="enable_twig" value="Y"></td>
+        </tr>
+        <tr>
+            <td width="50%" align="right"><label for="enable_twig_debug">Включить отладку (dump)</label></td>
+            <td><input type="checkbox" name="enable_twig_debug" id="enable_twig_debug" value="Y"></td>
+        </tr>
+    </table>
+
+
     <? $arSiteTabControl->EndTab(); ?>
+
 
     <br>
     <input type="submit" name="inst" value="<?echo GetMessage("MOD_INSTALL")?>">
@@ -147,7 +167,7 @@ $arSiteTabControl = new CAdminViewTabControl("siteTabControl", array(
 <script type="text/javascript">
     $(function(){
 
-        $("#install_slider_iblock").on('change',function(e){
+        $("#install_slider_iblock").on('change',function(){
             if($(this).is(':checked')){
                 $("#install_slider_iblock_type").removeAttr('disabled');
             } else {
@@ -155,7 +175,7 @@ $arSiteTabControl = new CAdminViewTabControl("siteTabControl", array(
             }
         });
 
-        $("#install_shopmap_iblock").on('change',function(e){
+        $("#install_shopmap_iblock").on('change',function(){
             if($(this).is(':checked')){
                 $("#install_shopmap_iblock_type").removeAttr('disabled');
             } else {
@@ -163,7 +183,7 @@ $arSiteTabControl = new CAdminViewTabControl("siteTabControl", array(
             }
         });
 
-        $("#install_banners_iblock").on('change',function(e){
+        $("#install_banners_iblock").on('change',function(){
             if($(this).is(':checked')){
                 $("#install_banners_iblock_type").removeAttr('disabled');
             } else {
@@ -171,7 +191,7 @@ $arSiteTabControl = new CAdminViewTabControl("siteTabControl", array(
             }
         });
 
-        $("#install_documents_iblock").on('change',function(e){
+        $("#install_documents_iblock").on('change',function(){
             if($(this).is(':checked')){
                 $("#install_documents_iblock_type").removeAttr('disabled');
             } else {
