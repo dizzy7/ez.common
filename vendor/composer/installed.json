@@ -1,5 +1,64 @@
 [
     {
+        "name": "twig/twig",
+        "version": "v1.15.1",
+        "version_normalized": "1.15.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/fabpot/Twig.git",
+            "reference": "1fb5784662f438d7d96a541e305e28b812e2eeed"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/fabpot/Twig/zipball/1fb5784662f438d7d96a541e305e28b812e2eeed",
+            "reference": "1fb5784662f438d7d96a541e305e28b812e2eeed",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2.4"
+        },
+        "time": "2014-02-13 10:19:29",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.15-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Twig_": "lib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com",
+                "homepage": "http://fabien.potencier.org",
+                "role": "Lead Developer"
+            },
+            {
+                "name": "Armin Ronacher",
+                "email": "armin.ronacher@active-4.com",
+                "role": "Project Founder"
+            },
+            {
+                "name": "Twig Team",
+                "homepage": "https://github.com/fabpot/Twig/graphs/contributors",
+                "role": "Contributors"
+            }
+        ],
+        "description": "Twig, the flexible, fast, and secure template language for PHP",
+        "homepage": "http://twig.sensiolabs.org",
+        "keywords": [
+            "templating"
+        ]
+    },
+    {
         "name": "leeoniya/dump-r",
         "version": "dev-master",
         "version_normalized": "9999999-dev",
@@ -56,17 +115,17 @@
     },
     {
         "name": "jdorn/sql-formatter",
-        "version": "v1.2.17",
-        "version_normalized": "1.2.17.0",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
         "source": {
             "type": "git",
             "url": "https://github.com/jdorn/sql-formatter.git",
-            "reference": "64990d96e0959dff8e059dfcdc1af130728d92bc"
+            "reference": "826d01c59bb972df6769f693a8b7d6ff13347557"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/jdorn/sql-formatter/zipball/64990d96e0959dff8e059dfcdc1af130728d92bc",
-            "reference": "64990d96e0959dff8e059dfcdc1af130728d92bc",
+            "url": "https://api.github.com/repos/jdorn/sql-formatter/zipball/826d01c59bb972df6769f693a8b7d6ff13347557",
+            "reference": "826d01c59bb972df6769f693a8b7d6ff13347557",
             "shasum": ""
         },
         "require": {
@@ -75,14 +134,14 @@
         "require-dev": {
             "phpunit/phpunit": "3.7.*"
         },
-        "time": "2014-01-12 16:20:24",
+        "time": "2014-03-15 14:22:01",
         "type": "library",
         "extra": {
             "branch-alias": {
                 "dev-master": "1.3.x-dev"
             }
         },
-        "installation-source": "dist",
+        "installation-source": "source",
         "autoload": {
             "classmap": [
                 "lib"
@@ -108,34 +167,33 @@
     },
     {
         "name": "php-console/php-console",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "version": "3.1.1",
+        "version_normalized": "3.1.1.0",
         "source": {
             "type": "git",
             "url": "https://github.com/barbushin/php-console.git",
-            "reference": "0a9197a1b756608fd0006180dd676c9a8d2d4f7d"
+            "reference": "1e6ebef04363fa86ddab9f9998ce537147ab9636"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/barbushin/php-console/zipball/0a9197a1b756608fd0006180dd676c9a8d2d4f7d",
-            "reference": "0a9197a1b756608fd0006180dd676c9a8d2d4f7d",
+            "url": "https://api.github.com/repos/barbushin/php-console/zipball/1e6ebef04363fa86ddab9f9998ce537147ab9636",
+            "reference": "1e6ebef04363fa86ddab9f9998ce537147ab9636",
             "shasum": ""
         },
         "require": {
             "php": ">=5.3.0"
         },
         "suggest": {
-            "php-console/laravel-service-provider": "*",
-            "php-console/silex-service-provider": "*"
+            "php-console/laravel-service-provider": "*"
         },
-        "time": "2014-02-05 04:31:30",
+        "time": "2014-02-03 13:42:12",
         "type": "library",
         "extra": {
             "branch-alias": {
                 "dev-master": "3.x-dev"
             }
         },
-        "installation-source": "source",
+        "installation-source": "dist",
         "autoload": {
             "psr-0": {
                 "PhpConsole": "src/"
