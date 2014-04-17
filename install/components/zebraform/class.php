@@ -14,15 +14,17 @@ class FormCallbackComponent extends \MdCommon\MdComponent {
 
         $this->arResult['form'] = $form;
 
+        PC::debug($this->arParams);
+
         $this->IncludeComponentTemplate();
 
         if($form->validate()){
-            echo $this->arParams['OK_TEXT'];
+            echo '<h2 style="color: green;">'.$this->arParams['OK_TEXT'].'</h2>';
 
             $arFields = $_POST;
             $arFields['EMAIL_TO'] = $this->arParams['EMAIL_TO'];
 
-            CEvent::Send(
+            CEvent::SendImmediate(
                 $this->arParams['EVENT_NAME'],
                 's1',
                 $arFields
@@ -34,15 +36,11 @@ class FormCallbackComponent extends \MdCommon\MdComponent {
 
     public function onPrepareComponentParams($arParams)
     {
-        $arParams["EVENT_NAME"] = trim($arParams["EVENT_NAME"]);
-        if($arParams["EVENT_NAME"] == '')
-            $arParams["EVENT_NAME"] = "FEEDBACK_FORM";
-        $arParams["EMAIL_TO"] = trim($arParams["EMAIL_TO"]);
-        if($arParams["EMAIL_TO"] == '')
-            $arParams["EMAIL_TO"] = COption::GetOptionString("main", "email_from");
-        $arParams["OK_TEXT"] = trim($arParams["OK_TEXT"]);
-        if($arParams["OK_TEXT"] == '')
-            $arParams["OK_TEXT"] = "Спасибо, ваша заявка принята!";
+        $this->setDefaultParams($arParams, array(
+                'EVENT_NAME' => 'FEEDBACK_FORM',
+                'EMAIL_TO' => COption::GetOptionString("main", "email_from"),
+                'OK_TEXT' => 'Спасибо, ваша заявка принята!',
+            ));
         
         return $arParams;
     }
