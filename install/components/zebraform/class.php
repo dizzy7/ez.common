@@ -8,7 +8,6 @@ class FormCallbackComponent extends \MdCommon\MdComponent {
         global $APPLICATION;
 
         require_once __DIR__.'/zebra_form/Zebra_Form.php';
-        $APPLICATION->SetAdditionalCSS('/bitrix/components/mediasfera/zebraform/zebra_form/public/css/zebra_form.css');
         $APPLICATION->AddHeadScript('/bitrix/components/mediasfera/zebraform/zebra_form/public/javascript/zebra_form.js');
 
         $form = new Zebra_Form('form');
