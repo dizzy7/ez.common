@@ -26,7 +26,7 @@ $arComponentParameters = array(
 			"TYPE"=>"LIST", 
 			"VALUES" => $arEvent,
 			"DEFAULT"=>"", 
-			"MULTIPLE"=>"Y", 
+			"MULTIPLE"=>"N",
 			"COLS"=>50,
 			"PARENT" => "BASE",
 		),

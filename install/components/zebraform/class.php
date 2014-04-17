@@ -23,11 +23,11 @@ class FormCallbackComponent extends \MdCommon\MdComponent {
             $arFields = $_POST;
             $arFields['EMAIL_TO'] = $this->arParams['EMAIL_TO'];
 
-            var_dump(CEvent::Send(
+            CEvent::Send(
                 $this->arParams['EVENT_NAME'],
                 's1',
                 $arFields
-            ));
+            );
         } else {
             $form->render();
         }
