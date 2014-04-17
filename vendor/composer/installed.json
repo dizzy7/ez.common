@@ -59,61 +59,6 @@
         ]
     },
     {
-        "name": "leeoniya/dump-r",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/leeoniya/dump_r.php.git",
-            "reference": "fdec685891c63b7a48f1286a43f9b7349cbf5601"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/leeoniya/dump_r.php/zipball/fdec685891c63b7a48f1286a43f9b7349cbf5601",
-            "reference": "fdec685891c63b7a48f1286a43f9b7349cbf5601",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.0"
-        },
-        "suggest": {
-            "jdorn/sql-formatter": "Pretty-print dumped SQL strings"
-        },
-        "time": "2013-05-05 07:53:39",
-        "type": "library",
-        "installation-source": "source",
-        "autoload": {
-            "files": [
-                "dump_r.php"
-            ],
-            "psr-0": {
-                "dump_r": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Leon Sorokin",
-                "email": "leeoniya@gmail.com",
-                "homepage": "https://github.com/leeoniya",
-                "role": "Developer"
-            }
-        ],
-        "description": "a cleaner, leaner mix of print_r() and var_dump()",
-        "homepage": "https://github.com/leeoniya/dump_r.php",
-        "keywords": [
-            "debug",
-            "dump",
-            "pretty",
-            "print",
-            "print_r",
-            "var_dump"
-        ]
-    },
-    {
         "name": "php-console/php-console",
         "version": "3.1.1",
         "version_normalized": "3.1.1.0",
@@ -219,6 +164,113 @@
         "keywords": [
             "highlight",
             "sql"
+        ]
+    },
+    {
+        "name": "leeoniya/dump-r",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/leeoniya/dump_r.php.git",
+            "reference": "fdec685891c63b7a48f1286a43f9b7349cbf5601"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/leeoniya/dump_r.php/zipball/fdec685891c63b7a48f1286a43f9b7349cbf5601",
+            "reference": "fdec685891c63b7a48f1286a43f9b7349cbf5601",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "suggest": {
+            "jdorn/sql-formatter": "Pretty-print dumped SQL strings"
+        },
+        "time": "2013-05-05 07:53:39",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "files": [
+                "dump_r.php"
+            ],
+            "psr-0": {
+                "dump_r": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Leon Sorokin",
+                "email": "leeoniya@gmail.com",
+                "homepage": "https://github.com/leeoniya",
+                "role": "Developer"
+            }
+        ],
+        "description": "a cleaner, leaner mix of print_r() and var_dump()",
+        "homepage": "https://github.com/leeoniya/dump_r.php",
+        "keywords": [
+            "debug",
+            "dump",
+            "pretty",
+            "print",
+            "print_r",
+            "var_dump"
+        ]
+    },
+    {
+        "name": "stefangabos/zebra_form",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/stefangabos/Zebra_Form.git",
+            "reference": "fb0781d8c9bab883101434b8c6366c9dd79769a6"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/stefangabos/Zebra_Form/zipball/fb0781d8c9bab883101434b8c6366c9dd79769a6",
+            "reference": "fb0781d8c9bab883101434b8c6366c9dd79769a6",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.0.2"
+        },
+        "time": "2014-03-27 09:30:55",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Zebra_Form": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "LGPL-3.0"
+        ],
+        "authors": [
+            {
+                "name": "Stefan Gabos",
+                "email": "contact@stefangabos.ro",
+                "homepage": "http://stefangabos.ro/",
+                "role": "Developer"
+            }
+        ],
+        "description": "A jQuery augmented PHP library for creating and validating HTML forms",
+        "homepage": "http://stefangabos.ro/php-libraries/zebra-form/",
+        "keywords": [
+            "Honeypot",
+            "client side validation",
+            "csrf",
+            "form",
+            "jquery validation",
+            "server side validation",
+            "validate",
+            "validation",
+            "xss"
         ]
     }
 ]

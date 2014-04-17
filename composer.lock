@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "99bfcac054a5288256bb182d6abd0b45",
+    "hash": "9552731441eaf1ebf6404e0a42fc6edc",
     "packages": [
         {
             "name": "jdorn/sql-formatter",
@@ -163,6 +163,56 @@
             "time": "2014-02-03 13:42:12"
         },
         {
+            "name": "stefangabos/zebra_form",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stefangabos/Zebra_Form.git",
+                "reference": "fb0781d8c9bab883101434b8c6366c9dd79769a6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stefangabos/Zebra_Form/zipball/fb0781d8c9bab883101434b8c6366c9dd79769a6",
+                "reference": "fb0781d8c9bab883101434b8c6366c9dd79769a6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.0.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Zebra_Form": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Stefan Gabos",
+                    "email": "contact@stefangabos.ro",
+                    "homepage": "http://stefangabos.ro/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A jQuery augmented PHP library for creating and validating HTML forms",
+            "homepage": "http://stefangabos.ro/php-libraries/zebra-form/",
+            "keywords": [
+                "Honeypot",
+                "client side validation",
+                "csrf",
+                "form",
+                "jquery validation",
+                "server side validation",
+                "validate",
+                "validation",
+                "xss"
+            ],
+            "time": "2014-03-27 09:30:55"
+        },
+        {
             "name": "twig/twig",
             "version": "v1.15.1",
             "source": {
@@ -228,7 +278,8 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "leeoniya/dump-r": 20
+        "leeoniya/dump-r": 20,
+        "stefangabos/zebra_form": 20
     },
     "platform": [
 

@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'dump_r' => array($vendorDir . '/leeoniya/dump-r/src'),
+    'Zebra_Form' => array($vendorDir . '/stefangabos/zebra_form'),
     'Twig_' => array($vendorDir . '/twig/twig/lib'),
     'PhpConsole' => array($vendorDir . '/php-console/php-console/src'),
 );
