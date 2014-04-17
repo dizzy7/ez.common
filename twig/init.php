@@ -16,6 +16,10 @@ $GLOBALS['arCustomTemplateEngines']=array(
 );
 
 function twigRender($templateFile, $arResult, $arParams, $arLangMessages, $templateFolder, $parentTemplateFolder, $template){
-    $arResult['PARAMS']=$arParams;
-    echo $GLOBALS['twig']->render($templateFile,$arResult);
+    $data = array(
+        'p' => $arParams,
+        'r' => $arResult,
+    );
+    $arResult['p']=$arParams;
+    echo $GLOBALS['twig']->render($templateFile,$data);
 }
