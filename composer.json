@@ -1,0 +1,8 @@
+{
+    "require": {
+        "twig/twig": "*",
+        "leeoniya/dump-r": "dev-master",
+        "php-console/php-console": "3.1.*",
+        "jdorn/sql-formatter": "*"
+    }
+}
