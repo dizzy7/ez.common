@@ -6,8 +6,8 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_admi
 require_once(__DIR__.'/formHanlder.php');
 
 $aTabs = array(
-    array("DIV" => "md_debug", "TAB" => "Debug", "TITLE" => "Debug"),
-    array("DIV" => "md_twig", "TAB" => "Twig", "TITLE" => "Twig"),
+    array("DIV" => "ez_debug", "TAB" => "Debug", "TITLE" => "Debug"),
+    array("DIV" => "ez_twig", "TAB" => "Twig", "TITLE" => "Twig"),
     );
 
 
@@ -22,14 +22,14 @@ $tabControl = new CAdminTabControl("tabControl", $aTabs);?>
     <tr valign="top">
         <td width="40%" class="field-name">Включить <a href="https://github.com/phpconsole/phpconsole" target="_blank">php-console</a></td>
         <td>
-            <?$twig = COption::GetOptionString("md.common", "phpconsole", "N");?>
+            <?$twig = COption::GetOptionString("ez.common", "phpconsole", "N");?>
             <input type="checkbox" <?=$twig == "Y"?"checked=\"checked\"":"";?> name="phpconsole" value="Y"/>
         </td>
     </tr>
     <tr valign="top">
         <td width="40%" class="field-name">Пароль phpconsole</td>
         <td>
-            <?$twig = COption::GetOptionString("md.common", "phpconsolepass", "");?>
+            <?$twig = COption::GetOptionString("ez.common", "phpconsolepass", "");?>
             <input name="phpconsolepass" type="password" value="<?=$twig?>" />
         </td>
     </tr>
@@ -41,14 +41,14 @@ $tabControl = new CAdminTabControl("tabControl", $aTabs);?>
     <tr valign="top">
         <td width="40%" class="field-name">Включить <a href="http://twig.sensiolabs.org/" target="_blank">Twig</a></td>
         <td>
-            <?$twig = COption::GetOptionString("md.common", "twig", "N");?>
+            <?$twig = COption::GetOptionString("ez.common", "twig", "N");?>
             <input type="checkbox" <?=$twig == "Y"?"checked=\"checked\"":"";?> name="twig" value="Y"/>
         </td>
     </tr>
     <tr valign="top">
         <td width="40%" class="field-name">Включить отладку (dump) </td>
         <td>
-            <?$twigDebug = COption::GetOptionString("md.common", "twig.debug", "N");?>
+            <?$twigDebug = COption::GetOptionString("ez.common", "twig.debug", "N");?>
             <input type="checkbox" <?=$twigDebug == "Y"?"checked=\"checked\"":"";?> name="twig_debug" value="Y"/>
         </td>
     </tr>

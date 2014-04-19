@@ -1,8 +1,8 @@
 <?php
 
-namespace MdCommon;
+namespace EzCommon;
 
-abstract class Mdcomponent extends \CBitrixComponent {
+abstract class Ezcomponent extends \CBitrixComponent {
 
     /**
      * Устанавливает значения по умолчанию для параметров, если они не заданы

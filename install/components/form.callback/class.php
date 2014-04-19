@@ -1,7 +1,7 @@
 <?php
 
 
-class FormCallbackComponent extends \MdCommon\MdComponent {
+class FormCallbackComponent extends \EzCommon\EzComponent {
 
     public function executeComponent()
     {

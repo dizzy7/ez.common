@@ -6,8 +6,8 @@ $arComponentDescription = array(
 	"DESCRIPTION" => "Создание форм с помощью библиотеки zebraform",
 	"ICON" => "/images/feedback.gif",
     "PATH" => array(
-        "ID" => "mediasfera",
-        "NAME" => "Медиасфера"
+        "ID" => "ez",
+        "NAME" => "Евгений Зацепин"
     ),
 );
 ?>

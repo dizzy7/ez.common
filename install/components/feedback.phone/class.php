@@ -1,7 +1,7 @@
 <?php
 
 
-class FeedbackPhoneComponent extends \MdCommon\MdComponent {
+class FeedbackPhoneComponent extends \EzCommon\EzComponent {
 
     public function executeComponent()
     {

@@ -1,7 +1,7 @@
 <?php
 
 
-class MenuElementsComponent extends \MdCommon\MdComponent
+class MenuElementsComponent extends \EzCommon\EzComponent
 {
 
     public function executeComponent()

@@ -1,1 +1,0 @@
-<? require($_SERVER["DOCUMENT_ROOT"]."/local/modules/md.common/admin/admin.php");?>

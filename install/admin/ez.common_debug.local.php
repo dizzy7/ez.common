@@ -1,0 +1,1 @@
+<? require($_SERVER["DOCUMENT_ROOT"]."/local/modules/ez.common/admin/admin.php");?>

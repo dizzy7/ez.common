@@ -5,29 +5,29 @@ $arSiteTabControl = new CAdminViewTabControl("siteTabControl", array(
     array(
         'TITLE' => "Компоненты",
         'TAB'   => "Компоненты",
-        "DIV"   => "md_components"
+        "DIV"   => "ez_components"
     ),
     array(
         'TITLE' => "Формы",
         'TAB'   => "Формы",
-        "DIV"   => "md_forms"
+        "DIV"   => "ez_forms"
     ),
     array(
         'TITLE' => "Отладка",
         'TAB'   => "Отладка",
-        "DIV"   => "md_debug"
+        "DIV"   => "ez_debug"
     ),
     array(
         'TITLE' => "Twig",
         'TAB'   => "Twig",
-        "DIV"   => "md_twig"
+        "DIV"   => "ez_twig"
     ),
 ));
 ?>
 
 <form action="<?=
 /** @var $APPLICATION CMain */
-$APPLICATION->GetCurPage() ?>" name="md_common_install">
+$APPLICATION->GetCurPage() ?>" name="ez_common_install">
     <?= bitrix_sessid_post() ?>
 
     <?
@@ -36,7 +36,7 @@ $APPLICATION->GetCurPage() ?>" name="md_common_install">
     $arTypesEx = CIBlockParameters::GetIBlockTypes();
     ?>
 
-    <input type="hidden" name="id" value="md.common">
+    <input type="hidden" name="id" value="ez.common">
     <input type="hidden" name="install" value="Y">
     <input type="hidden" name="step" value="2">
 

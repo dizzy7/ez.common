@@ -1,7 +1,7 @@
 <?php
 
 
-class BannerComponent extends \MdCommon\MdComponent {
+class BannerComponent extends \EzCommon\EzComponent {
 
     public function executeComponent()
     {

@@ -11,8 +11,8 @@ $arComponentDescription = array(
 	),
 	"CACHE_PATH" => "Y",
 	"PATH" => array(
-		"ID" => "mediasfera",
-        "NAME" => "Медиасфера"
+        "ID" => "ez",
+        "NAME" => "Евгений Зацепин"
 	),
 );
 

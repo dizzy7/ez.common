@@ -1,7 +1,7 @@
 <?php
 
 
-class ShopsmapComponent extends \MdCommon\MdComponent
+class ShopsmapComponent extends \EzCommon\EzComponent
 {
 
     public function executeComponent()

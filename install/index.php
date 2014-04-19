@@ -2,31 +2,31 @@
 IncludeModuleLangFile(__FILE__);
 
 
-if (class_exists('md_common')) {
+if (class_exists('ez_common')) {
     return;
 }
 
-class md_common extends CModule
+class ez_common extends CModule
 {
-    public $MODULE_ID = 'md.common';
+    public $MODULE_ID = 'ez.common';
     public $MODULE_VERSION;
     public $MODULE_VERSION_DATE;
     public $MODULE_NAME;
     public $MODULE_DESCRIPTION;
-    public $PARTNER_NAME = 'Медиасфера';
-    public $PARTNER_URI = 'http://www.media-sfera.com';
+    public $PARTNER_NAME = 'Евгений Зацепин';
+    public $PARTNER_URI = 'http://github.com/dizzy7';
 
     public $START_TYPE = 'WINDOW';
     public $WIZARD_TYPE = "INSTALL";
 
-    public function md_common()
+    public function ez_common()
     {
         $arModuleVersion = array();
         include(__DIR__ . '/version.php');
         $this->MODULE_VERSION      = $arModuleVersion['VERSION'];
         $this->MODULE_VERSION_DATE = $arModuleVersion['VERSION_DATE'];
-        $this->MODULE_NAME         = "Готовые решения Медиасферы";
-        $this->MODULE_DESCRIPTION  = "Набор готовых компонентов на разные случаи жизни";
+        $this->MODULE_NAME         = "Готовые компоненты, php-console и twig";
+        $this->MODULE_DESCRIPTION  = "Набор готовых компонентов на разные случаи жизни, отладчик php-console, шаблонизатор twig";
     }
 
     public function DoInstall()
@@ -83,15 +83,15 @@ class md_common extends CModule
 
     function InstallEvents($arParams = array())
     {
-        RegisterModuleDependences('main', 'OnBeforeProlog', $this->MODULE_ID, 'MdCommon', 'OnBeforeProlog');
-        RegisterModuleDependences('main', 'OnBuildGlobalMenu', $this->MODULE_ID, 'MdCommon', 'OnBuildGlobalMenu');
+        RegisterModuleDependences('main', 'OnBeforeProlog', $this->MODULE_ID, 'EzCommon', 'OnBeforeProlog');
+        RegisterModuleDependences('main', 'OnBuildGlobalMenu', $this->MODULE_ID, 'EzCommon', 'OnBuildGlobalMenu');
         return true;
     }
 
     function UnInstallEvents($arParams = array())
     {
-        UnRegisterModuleDependences('main', 'OnBeforeProlog', $this->MODULE_ID, 'MdCommon', 'OnBeforeProlog');
-        UnRegisterModuleDependences('main', 'OnBuildGlobalMenu', $this->MODULE_ID, 'MdCommon', 'OnBuildGlobalMenu');
+        UnRegisterModuleDependences('main', 'OnBeforeProlog', $this->MODULE_ID, 'EzCommon', 'OnBeforeProlog');
+        UnRegisterModuleDependences('main', 'OnBuildGlobalMenu', $this->MODULE_ID, 'EzCommon', 'OnBuildGlobalMenu');
         return true;
     }
 
@@ -104,17 +104,17 @@ class md_common extends CModule
 
     function InstallDB()
     {
-        RegisterModule("md.common");;
+        RegisterModule("ez.common");;
     }
 
     function UnInstallDB()
     {
-        UnRegisterModule("md.common");;
+        UnRegisterModule("ez.common");;
     }
 
     function InstallFiles()
     {
-        CopyDirFiles(__DIR__ . '/components', $_SERVER['DOCUMENT_ROOT'] . '/bitrix/components/mediasfera', true, true);
+        CopyDirFiles(__DIR__ . '/components', $_SERVER['DOCUMENT_ROOT'] . '/bitrix/components/ez', true, true);
         CopyDirFiles(__DIR__ . '/admin', $_SERVER['DOCUMENT_ROOT'] . '/bitrix/admin', true, true);
 
         return true;
@@ -122,7 +122,7 @@ class md_common extends CModule
 
     function UnInstallFiles()
     {
-        DeleteDirFilesEx('/bitrix/components/mediasfera');
+        DeleteDirFilesEx('/bitrix/components/ez');
         DeleteDirFiles(__DIR__.'/admin',$_SERVER['DOCUMENT_ROOT'].'/bitrix/admin');
     }
 
@@ -454,25 +454,25 @@ TEXT;
 
     private function enablePhpConsole($pass)
     {
-        COption::SetOptionString('md.common','phpconsole','Y');
-        COption::SetOptionString('md.common','phpconsolepass',$pass);
+        COption::SetOptionString('ez.common','phpconsole','Y');
+        COption::SetOptionString('ez.common','phpconsolepass',$pass);
     }
 
     private function disablePhpConsole()
     {
-        COption::SetOptionString('md.common','phpconsole','N');
+        COption::SetOptionString('ez.common','phpconsole','N');
     }
 
     private function enableTwig($debug)
     {
-        COption::SetOptionString('md.common','twig','Y');
-        COption::SetOptionString('md.common','twig.debug',$debug);
+        COption::SetOptionString('ez.common','twig','Y');
+        COption::SetOptionString('ez.common','twig.debug',$debug);
     }
 
     private function disableTwig()
     {
-        COption::SetOptionString('md.common','twig','N');
-        COption::SetOptionString('md.common','twig.debug','N');
+        COption::SetOptionString('ez.common','twig','N');
+        COption::SetOptionString('ez.common','twig.debug','N');
     }
 
 }

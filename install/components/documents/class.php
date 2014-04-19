@@ -1,7 +1,7 @@
 <?php
 
 
-class DocumentsComponent extends \MdCommon\MdComponent {
+class DocumentsComponent extends \EzCommon\EzComponent {
 
     private $types = array(
         'doc' => array(

@@ -1,12 +1,12 @@
 <?php
 
 
-class MdCommon {
+class EzCommon {
     public function OnBeforeProlog(){
         require_once __DIR__.'/../vendor/autoload.php';
 
-        $phpc = COption::GetOptionString('md.common','phpconsole','N');
-        $phppass = COption::GetOptionString('md.common','phpconsolepass','');
+        $phpc = COption::GetOptionString('ez.common','phpconsole','N');
+        $phppass = COption::GetOptionString('ez.common','phpconsolepass','');
         if($phpc=='Y'){
             $connector = \PhpConsole\Connector::getInstance();
             if($phppass){
@@ -17,7 +17,7 @@ class MdCommon {
             require_once __DIR__.'/phpconsole_stub.php';
         }
 
-        $twig = COption::GetOptionString('md.common','twig','N');
+        $twig = COption::GetOptionString('ez.common','twig','N');
         if($twig==='Y'){
             require_once __DIR__.'/../twig/init.php';
         }
@@ -32,9 +32,9 @@ class MdCommon {
             "parent_menu" => "global_menu_settings",
             "section" => $MODULE_ID,
             "sort" => 50,
-            "text" => "Mediasfera debug",
-            "title" => 'Mediasfera debug settings',
-            "url" => ($local ? "md.common_debug.local.php" : "md.common_debug.bitrix.php"),
+            "text" => "Настройки EZ",
+            "title" => 'Настройки EZ',
+            "url" => ($local ? "ez.common_debug.local.php" : "ez.common_debug.bitrix.php"),
             "items_id" => $MODULE_ID."_items",
             "more_url" => array(),
             "items" => array()

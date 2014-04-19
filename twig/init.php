@@ -2,7 +2,7 @@
 
 $loader = new \Twig_Loader_Filesystem(array($_SERVER['DOCUMENT_ROOT']));
 $GLOBALS['twig'] = new \Twig_Environment($loader,array(
-        'debug' => COption::GetOptionString('md.common','twig.debug','N') === 'Y',
+        'debug' => COption::GetOptionString('ez.common','twig.debug','N') === 'Y',
         'cache' => $_SERVER['DOCUMENT_ROOT'].'/bitrix/cache/twig'
     ));
 $GLOBALS['twig']->addExtension(new \Twig_Extension_Debug());

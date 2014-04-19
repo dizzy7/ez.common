@@ -1,9 +1,9 @@
 <?php
 
-CModule::AddAutoloadClasses('md.common',
+CModule::AddAutoloadClasses('ez.common',
     array(
-        'MdCommon' => 'classes/mdcommon.php',
-        'MdCommon\\MdComponent' => 'lib/mdcomponent.php',
+        'EzCommon' => 'classes/ezcommon.php',
+        'EzCommon\\EzComponent' => 'lib/ezcomponent.php',
     )
 );
 
