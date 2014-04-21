@@ -22,4 +22,17 @@ function twigRender($templateFile, $arResult, $arParams, $arLangMessages, $templ
     );
     $arResult['p']=$arParams;
     echo $GLOBALS['twig']->render($templateFile,$data);
+
+    $component_epilog = $templateFolder . "/component_epilog.php";
+    if(file_exists($_SERVER["DOCUMENT_ROOT"].$component_epilog))
+    {
+        $component = $template->__component;
+        $component->SetTemplateEpilog(array(
+                "epilogFile" => $component_epilog,
+                "templateName" => $template->__name,
+                "templateFile" => $template->__file,
+                "templateFolder" => $template->__folder,
+                "templateData" => false,
+            ));
+    }
 }
