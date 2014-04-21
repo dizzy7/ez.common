@@ -23,9 +23,16 @@ class Bitrix_Twig_Extension extends \Twig_Extension {
                 $component = new \CBitrixComponent();
                 return $component->GetEditAreaId($arItem['ID']);
             }),
+            new \Twig_SimpleFunction('GetPath',function($id){
+                    return \CFile::GetPath($id);
+                }),
             new \Twig_SimpleFunction('ResizeImage',function($id,$width,$height){
                 return \CFile::ResizeImageGet($id,array('width'=>$width,'height'=>$height),BX_RESIZE_IMAGE_PROPORTIONAL,true);
             }),
+            new \Twig_SimpleFunction('ResizeImageGetSrc',function($id,$width,$height){
+                    $img =  \CFile::ResizeImageGet($id,array('width'=>$width,'height'=>$height),BX_RESIZE_IMAGE_PROPORTIONAL,true);
+                    return $img['src'];
+                }),
             new \Twig_SimpleFunction('ResizeImageView',function($id,$width,$height,$alt=array()){
                 $img = \CFile::ResizeImageGet($id,array('width'=>$width,'height'=>$height),BX_RESIZE_IMAGE_PROPORTIONAL,true);
                 $html = "<img src=\"{$img['src']}\" width=\"{$img['width']}\" height=\"{$img['height']}\"";
