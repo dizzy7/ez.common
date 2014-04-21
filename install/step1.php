@@ -111,6 +111,23 @@ $APPLICATION->GetCurPage() ?>" name="ez_common_install">
             </td>
         </tr>
     </table>
+    <h3>Гостевая книга</h3>
+    <table class="list-table">
+        <tr>
+            <td width="50%" align="right"><label for="install_guestbook_iblock">Создать инфоблок для гостевой книги</label></td>
+            <td><input type="checkbox" name="install_guestbook_iblock" id="install_guestbook_iblock" value="Y"></td>
+        </tr>
+        <tr>
+            <td width="50%" align="right"><label for="install_guestbook_iblock_type">Тип информационного блока</label></td>
+            <td>
+                <select name="install_guestbook_iblock_type" id="install_guestbook_iblock_type" disabled>
+                    <?foreach($arTypesEx as $id=>$name):?>
+                        <option value="<?=$id?>"><?=$name?></option>
+                    <?endforeach;?>
+                </select>
+            </td>
+        </tr>
+    </table>
 
     <? $arSiteTabControl->BeginNextTab(); ?>
     <h2>Форма обратной связи с полем "Телефон"</h2>
@@ -196,6 +213,14 @@ $APPLICATION->GetCurPage() ?>" name="ez_common_install">
                 $("#install_documents_iblock_type").removeAttr('disabled');
             } else {
                 $("#install_documents_iblock_type").attr('disabled','disabled');
+            }
+        });
+
+        $("#install_guestbook_iblock").on('change',function(){
+            if($(this).is(':checked')){
+                $("#install_guestbook_iblock_type").removeAttr('disabled');
+            } else {
+                $("#install_guestbook_iblock_type").attr('disabled','disabled');
             }
         });
     });

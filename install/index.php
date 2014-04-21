@@ -56,6 +56,10 @@ class ez_common extends CModule
                 $this->CreateDocumentsIblock($_REQUEST['install_documents_iblock_type']);
             }
 
+            if ($_REQUEST['install_guestbook_iblock'] == 'Y' && $_REQUEST['install_guestbook_iblock_type']) {
+                $this->CreateGuestbookIblock($_REQUEST['install_guestbook_iblock_type']);
+            }
+
             if ($_REQUEST['install_feedback_template'] == 'Y') {
                 $this->installFeedbackTemplates();
             }
@@ -347,6 +351,24 @@ class ez_common extends CModule
             )
         );
 
+    }
+
+    private function CreateGuestbookIblock($iblockType)
+    {
+        CModule::IncludeModule('iblock');
+
+        //Создание инфоблока
+        $iblock = new CIBlock;
+        $ID     = $iblock->Add(
+            array(
+                'ACTIVE'         => 'Y',
+                'NAME'           => 'Гостевая книга',
+                'CODE'           => 'guestbook',
+                'IBLOCK_TYPE_ID' => $iblockType,
+                'SITE_ID'        => 's1',
+                'GROUP_ID'       => Array("2" => "R", "3" => "R"),
+            )
+        );
     }
 
     private function installFeedbackTemplates()
