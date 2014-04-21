@@ -37,8 +37,10 @@ class Bitrix_Twig_Extension extends \Twig_Extension {
             }),
             new \Twig_SimpleFunction('pcdebug',function($data){
                 PC::debug($data);
-                return true;
             }),
+            new \Twig_SimpleFunction('dumpr',function($data){
+                    dump_r($data,false,true,1000,1);
+                }),
         );
     }
 
