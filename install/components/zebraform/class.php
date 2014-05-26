@@ -14,8 +14,6 @@ class FormCallbackComponent extends \EzCommon\EzComponent {
 
         $this->arResult['form'] = $form;
 
-        PC::debug($this->arParams);
-
         $this->IncludeComponentTemplate();
 
         if($form->validate()){

@@ -3,7 +3,8 @@
 $loader = new \Twig_Loader_Filesystem(array($_SERVER['DOCUMENT_ROOT']));
 $GLOBALS['twig'] = new \Twig_Environment($loader,array(
         'debug' => COption::GetOptionString('ez.common','twig.debug','N') === 'Y',
-        'cache' => $_SERVER['DOCUMENT_ROOT'].'/bitrix/cache/twig'
+        'cache' => $_SERVER['DOCUMENT_ROOT'].'/bitrix/cache/twig',
+        'autoescape' => false,
     ));
 $GLOBALS['twig']->addExtension(new \Twig_Extension_Debug());
 require_once __DIR__. '/Bitrix_Twig_Extension.php';
@@ -19,6 +20,7 @@ function twigRender($templateFile, $arResult, $arParams, $arLangMessages, $templ
     $data = array(
         'p' => $arParams,
         'r' => $arResult,
+        'app' => $GLOBALS['APPLICATION'],
     );
     $arResult['p']=$arParams;
     echo $GLOBALS['twig']->render($templateFile,$data);

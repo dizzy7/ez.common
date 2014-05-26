@@ -31,8 +31,6 @@ if(!isset($_POST['sumbit'])){
     }
     ?>
 
-<?PC::debug($arResult);?>
-
     <form action="<?=POST_FORM_ACTION_URI?>" method="POST" id="callback_form">
         <?=bitrix_sessid_post()?>
         <div class="mf-name">
