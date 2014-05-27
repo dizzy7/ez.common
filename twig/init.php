@@ -21,6 +21,10 @@ function twigRender($templateFile, $arResult, $arParams, $arLangMessages, $templ
         'p' => $arParams,
         'r' => $arResult,
         'app' => $GLOBALS['APPLICATION'],
+        'g' => $GLOBALS,
+        'post' => $_POST,
+        'get'  => $_GET,
+        'request' => $_REQUEST,
     );
     $arResult['p']=$arParams;
     echo $GLOBALS['twig']->render($templateFile,$data);
