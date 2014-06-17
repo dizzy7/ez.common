@@ -13,6 +13,7 @@ class EzCommon {
                 $connector->setPassword($phppass);
             }
             $connector->getDumper()->itemsCountLimit=5000;
+            $connector->getDumper()->levelLimit=10;
             \PhpConsole\Helper::register($connector);
         } else {
             require_once __DIR__.'/phpconsole_stub.php';
