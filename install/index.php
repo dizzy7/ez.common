@@ -402,6 +402,7 @@ TEXT;
 
 Автор: #AUTHOR#
 E-mail автора: #AUTHOR_EMAIL#
+Телефон автора: #AUTHOR_PHONE#
 
 Текст сообщения:
 #TEXT#
