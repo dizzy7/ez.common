@@ -1,0 +1,18 @@
+div.mfeedback input, div.mfeedback textarea {
+    width: 100%;
+}
+
+div.mf-name, div.mf-phone div.mf-email, div.mf-captcha, div.mf-message {
+    width: 80%;
+    padding-bottom: 0.4em;
+}
+
+span.mf-req {
+    color: red;
+}
+
+div.mf-ok-text {
+    color: green;
+    font-weight: bold;
+    padding-bottom: 1em;
+}
