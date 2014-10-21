@@ -1,7 +1,8 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
     ],
     "hash": "9552731441eaf1ebf6404e0a42fc6edc",
     "packages": [
@@ -61,12 +62,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/leeoniya/dump_r.php.git",
-                "reference": "fdec685891c63b7a48f1286a43f9b7349cbf5601"
+                "reference": "7f96104bc1b34c0a6d534a6175d2fd1ae4573e7d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/leeoniya/dump_r.php/zipball/fdec685891c63b7a48f1286a43f9b7349cbf5601",
-                "reference": "fdec685891c63b7a48f1286a43f9b7349cbf5601",
+                "url": "https://api.github.com/repos/leeoniya/dump_r.php/zipball/7f96104bc1b34c0a6d534a6175d2fd1ae4573e7d",
+                "reference": "7f96104bc1b34c0a6d534a6175d2fd1ae4573e7d",
                 "shasum": ""
             },
             "require": {
@@ -106,7 +107,7 @@
                 "print_r",
                 "var_dump"
             ],
-            "time": "2013-05-05 07:53:39"
+            "time": "2014-05-07 18:19:19"
         },
         {
             "name": "php-console/php-console",
@@ -145,7 +146,7 @@
             ],
             "authors": [
                 {
-                    "name": "Barbushin Sergey",
+                    "name": "Sergey Barbushin",
                     "email": "barbushin@gmail.com",
                     "homepage": "http://linkedin.com/in/barbushin"
                 }
@@ -168,12 +169,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/stefangabos/Zebra_Form.git",
-                "reference": "fb0781d8c9bab883101434b8c6366c9dd79769a6"
+                "reference": "b09de3dd72f20f972f8a37abedcf9f2c0b9855f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stefangabos/Zebra_Form/zipball/fb0781d8c9bab883101434b8c6366c9dd79769a6",
-                "reference": "fb0781d8c9bab883101434b8c6366c9dd79769a6",
+                "url": "https://api.github.com/repos/stefangabos/Zebra_Form/zipball/b09de3dd72f20f972f8a37abedcf9f2c0b9855f8",
+                "reference": "b09de3dd72f20f972f8a37abedcf9f2c0b9855f8",
                 "shasum": ""
             },
             "require": {
@@ -210,20 +211,20 @@
                 "validation",
                 "xss"
             ],
-            "time": "2014-03-27 09:30:55"
+            "time": "2014-10-13 16:34:35"
         },
         {
             "name": "twig/twig",
-            "version": "v1.15.1",
+            "version": "v1.16.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fabpot/Twig.git",
-                "reference": "1fb5784662f438d7d96a541e305e28b812e2eeed"
+                "reference": "42f758d9fe2146d1f0470604fc05ee43580873fc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Twig/zipball/1fb5784662f438d7d96a541e305e28b812e2eeed",
-                "reference": "1fb5784662f438d7d96a541e305e28b812e2eeed",
+                "url": "https://api.github.com/repos/fabpot/Twig/zipball/42f758d9fe2146d1f0470604fc05ee43580873fc",
+                "reference": "42f758d9fe2146d1f0470604fc05ee43580873fc",
                 "shasum": ""
             },
             "require": {
@@ -232,7 +233,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.15-dev"
+                    "dev-master": "1.16-dev"
                 }
             },
             "autoload": {
@@ -267,24 +268,17 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2014-02-13 10:19:29"
+            "time": "2014-10-17 12:53:44"
         }
     ],
-    "packages-dev": [
-
-    ],
-    "aliases": [
-
-    ],
+    "packages-dev": [],
+    "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
         "leeoniya/dump-r": 20,
         "stefangabos/zebra_form": 20
     },
-    "platform": [
-
-    ],
-    "platform-dev": [
-
-    ]
+    "prefer-stable": false,
+    "platform": [],
+    "platform-dev": []
 }

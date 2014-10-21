@@ -23,6 +23,12 @@ if(isset($_POST['submit'])){
         COption::SetOptionString('ez.common','twig.debug','N');
     }
 
+    if(isset($_POST['mailcatch']) && $_POST['mailcatch']=='Y'){
+        COption::SetOptionString('ez.common','mailcatch','Y');
+    } else {
+        COption::SetOptionString('ez.common','mailcatch','N');
+    }
+
     LocalRedirect($GLOBALS['APPLICATION']->GetCurPage());
 }
 

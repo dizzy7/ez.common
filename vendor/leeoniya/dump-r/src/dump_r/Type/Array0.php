@@ -1,29 +1,29 @@
 <?php
 
 namespace dump_r\Type;
-use dump_r\Type;
+use dump_r\Type, dump_r\Core;
 
 class Array0 extends Type {
-/*	// array reference/recusrion detection
-	// copy-on-write dooms this :(
-	public function chk_ref() {
-		if (array_key_exists('*dump_r_ref', $this->raw) && array_key_exists($this->raw['*dump_r_ref'], Type::$dic)) {
-			var_dump($this->raw['*dump_r_ref']);
+	static $ref_key = '__ref_uid';
+
+	function chk_ref() {
+		if (array_key_exists(self::$ref_key, $this->raw)) {
+			$this->id = $this->raw[self::$ref_key];
 			return true;
 		}
-		else {
-			$this->id = uniqid();
-			Type::$dic[$this->id] = true;
-			$this->raw['*dump_r_ref'] = $this->id;		// temp set id in array
-			return false;
-		}
+
+		$this->id = Core::rand_str(16);
+		$this->raw[self::$ref_key] = $this->id;
+		Type::$dic[$this->id] = &$this->raw;
+
+		return false;
 	}
-*/
+
 	function get_len() {
 		return count($this->nodes);
 	}
 
 	function get_nodes() {
-		return $this->raw;
+		return array_slice($this->raw, 0, count($this->raw) - 1);
 	}
 }

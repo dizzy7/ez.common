@@ -24,6 +24,10 @@ class EzCommon {
             require_once __DIR__.'/../twig/init.php';
         }
 
+        $mailcatch = COption::GetOptionString('ez.common','mailcatch','N');
+        if($mailcatch==='Y'){
+            require_once __DIR__.'/mailcatch.php';
+        }
     }
 
     function OnBuildGlobalMenu(&$aGlobalMenu, &$aModuleMenu)

@@ -156,6 +156,10 @@ $APPLICATION->GetCurPage() ?>" name="ez_common_install">
             <td width="50%" align="right"><label for="pass_phpconsole">Пароль php-console</a></label></td>
             <td><input type="password" name="pass_phpconsole" id="pass_phpconsole"></td>
         </tr>
+        <tr>
+            <td width="50%" align="right"><label for="enable_mailcatch">Перехватывать почту</a></label></td>
+            <td><input type="checkbox" name="enable_mailcatch" id="enable_mailcatch"></td>
+        </tr>
     </table>
 
 

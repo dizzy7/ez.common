@@ -1,5 +1,227 @@
 [
     {
+        "name": "leeoniya/dump-r",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/leeoniya/dump_r.php.git",
+            "reference": "7f96104bc1b34c0a6d534a6175d2fd1ae4573e7d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/leeoniya/dump_r.php/zipball/7f96104bc1b34c0a6d534a6175d2fd1ae4573e7d",
+            "reference": "7f96104bc1b34c0a6d534a6175d2fd1ae4573e7d",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "suggest": {
+            "jdorn/sql-formatter": "Pretty-print dumped SQL strings"
+        },
+        "time": "2014-05-07 18:19:19",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "files": [
+                "dump_r.php"
+            ],
+            "psr-0": {
+                "dump_r": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Leon Sorokin",
+                "email": "leeoniya@gmail.com",
+                "homepage": "https://github.com/leeoniya",
+                "role": "Developer"
+            }
+        ],
+        "description": "a cleaner, leaner mix of print_r() and var_dump()",
+        "homepage": "https://github.com/leeoniya/dump_r.php",
+        "keywords": [
+            "debug",
+            "dump",
+            "pretty",
+            "print",
+            "print_r",
+            "var_dump"
+        ]
+    },
+    {
+        "name": "stefangabos/zebra_form",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/stefangabos/Zebra_Form.git",
+            "reference": "b09de3dd72f20f972f8a37abedcf9f2c0b9855f8"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/stefangabos/Zebra_Form/zipball/b09de3dd72f20f972f8a37abedcf9f2c0b9855f8",
+            "reference": "b09de3dd72f20f972f8a37abedcf9f2c0b9855f8",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.0.2"
+        },
+        "time": "2014-10-13 16:34:35",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Zebra_Form": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "LGPL-3.0"
+        ],
+        "authors": [
+            {
+                "name": "Stefan Gabos",
+                "email": "contact@stefangabos.ro",
+                "homepage": "http://stefangabos.ro/",
+                "role": "Developer"
+            }
+        ],
+        "description": "A jQuery augmented PHP library for creating and validating HTML forms",
+        "homepage": "http://stefangabos.ro/php-libraries/zebra-form/",
+        "keywords": [
+            "Honeypot",
+            "client side validation",
+            "csrf",
+            "form",
+            "jquery validation",
+            "server side validation",
+            "validate",
+            "validation",
+            "xss"
+        ]
+    },
+    {
+        "name": "twig/twig",
+        "version": "v1.16.2",
+        "version_normalized": "1.16.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/fabpot/Twig.git",
+            "reference": "42f758d9fe2146d1f0470604fc05ee43580873fc"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/fabpot/Twig/zipball/42f758d9fe2146d1f0470604fc05ee43580873fc",
+            "reference": "42f758d9fe2146d1f0470604fc05ee43580873fc",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2.4"
+        },
+        "time": "2014-10-17 12:53:44",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.16-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Twig_": "lib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com",
+                "homepage": "http://fabien.potencier.org",
+                "role": "Lead Developer"
+            },
+            {
+                "name": "Armin Ronacher",
+                "email": "armin.ronacher@active-4.com",
+                "role": "Project Founder"
+            },
+            {
+                "name": "Twig Team",
+                "homepage": "https://github.com/fabpot/Twig/graphs/contributors",
+                "role": "Contributors"
+            }
+        ],
+        "description": "Twig, the flexible, fast, and secure template language for PHP",
+        "homepage": "http://twig.sensiolabs.org",
+        "keywords": [
+            "templating"
+        ]
+    },
+    {
+        "name": "php-console/php-console",
+        "version": "3.1.1",
+        "version_normalized": "3.1.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/barbushin/php-console.git",
+            "reference": "1e6ebef04363fa86ddab9f9998ce537147ab9636"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/barbushin/php-console/zipball/1e6ebef04363fa86ddab9f9998ce537147ab9636",
+            "reference": "1e6ebef04363fa86ddab9f9998ce537147ab9636",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "suggest": {
+            "php-console/laravel-service-provider": "*"
+        },
+        "time": "2014-02-03 13:42:12",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "PhpConsole": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD 3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Sergey Barbushin",
+                "email": "barbushin@gmail.com",
+                "homepage": "http://linkedin.com/in/barbushin"
+            }
+        ],
+        "description": "Server side PHP library for Google Chrome extension \"PHP Console\".",
+        "homepage": "https://github.com/barbushin/php-console",
+        "keywords": [
+            "chrome",
+            "debug",
+            "error handler",
+            "errors",
+            "google chrome",
+            "php"
+        ]
+    },
+    {
         "name": "jdorn/sql-formatter",
         "version": "v1.2.17",
         "version_normalized": "1.2.17.0",
@@ -49,228 +271,6 @@
         "keywords": [
             "highlight",
             "sql"
-        ]
-    },
-    {
-        "name": "leeoniya/dump-r",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/leeoniya/dump_r.php.git",
-            "reference": "fdec685891c63b7a48f1286a43f9b7349cbf5601"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/leeoniya/dump_r.php/zipball/fdec685891c63b7a48f1286a43f9b7349cbf5601",
-            "reference": "fdec685891c63b7a48f1286a43f9b7349cbf5601",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.0"
-        },
-        "suggest": {
-            "jdorn/sql-formatter": "Pretty-print dumped SQL strings"
-        },
-        "time": "2013-05-05 07:53:39",
-        "type": "library",
-        "installation-source": "source",
-        "autoload": {
-            "files": [
-                "dump_r.php"
-            ],
-            "psr-0": {
-                "dump_r": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Leon Sorokin",
-                "email": "leeoniya@gmail.com",
-                "homepage": "https://github.com/leeoniya",
-                "role": "Developer"
-            }
-        ],
-        "description": "a cleaner, leaner mix of print_r() and var_dump()",
-        "homepage": "https://github.com/leeoniya/dump_r.php",
-        "keywords": [
-            "debug",
-            "dump",
-            "pretty",
-            "print",
-            "print_r",
-            "var_dump"
-        ]
-    },
-    {
-        "name": "php-console/php-console",
-        "version": "3.1.1",
-        "version_normalized": "3.1.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/barbushin/php-console.git",
-            "reference": "1e6ebef04363fa86ddab9f9998ce537147ab9636"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/barbushin/php-console/zipball/1e6ebef04363fa86ddab9f9998ce537147ab9636",
-            "reference": "1e6ebef04363fa86ddab9f9998ce537147ab9636",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.0"
-        },
-        "suggest": {
-            "php-console/laravel-service-provider": "*"
-        },
-        "time": "2014-02-03 13:42:12",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "3.x-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "PhpConsole": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD 3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Barbushin Sergey",
-                "email": "barbushin@gmail.com",
-                "homepage": "http://linkedin.com/in/barbushin"
-            }
-        ],
-        "description": "Server side PHP library for Google Chrome extension \"PHP Console\".",
-        "homepage": "https://github.com/barbushin/php-console",
-        "keywords": [
-            "chrome",
-            "debug",
-            "error handler",
-            "errors",
-            "google chrome",
-            "php"
-        ]
-    },
-    {
-        "name": "stefangabos/zebra_form",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/stefangabos/Zebra_Form.git",
-            "reference": "fb0781d8c9bab883101434b8c6366c9dd79769a6"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/stefangabos/Zebra_Form/zipball/fb0781d8c9bab883101434b8c6366c9dd79769a6",
-            "reference": "fb0781d8c9bab883101434b8c6366c9dd79769a6",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.0.2"
-        },
-        "time": "2014-03-27 09:30:55",
-        "type": "library",
-        "installation-source": "source",
-        "autoload": {
-            "psr-0": {
-                "Zebra_Form": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "LGPL-3.0"
-        ],
-        "authors": [
-            {
-                "name": "Stefan Gabos",
-                "email": "contact@stefangabos.ro",
-                "homepage": "http://stefangabos.ro/",
-                "role": "Developer"
-            }
-        ],
-        "description": "A jQuery augmented PHP library for creating and validating HTML forms",
-        "homepage": "http://stefangabos.ro/php-libraries/zebra-form/",
-        "keywords": [
-            "Honeypot",
-            "client side validation",
-            "csrf",
-            "form",
-            "jquery validation",
-            "server side validation",
-            "validate",
-            "validation",
-            "xss"
-        ]
-    },
-    {
-        "name": "twig/twig",
-        "version": "v1.15.1",
-        "version_normalized": "1.15.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/fabpot/Twig.git",
-            "reference": "1fb5784662f438d7d96a541e305e28b812e2eeed"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/fabpot/Twig/zipball/1fb5784662f438d7d96a541e305e28b812e2eeed",
-            "reference": "1fb5784662f438d7d96a541e305e28b812e2eeed",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.2.4"
-        },
-        "time": "2014-02-13 10:19:29",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "1.15-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Twig_": "lib/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com",
-                "homepage": "http://fabien.potencier.org",
-                "role": "Lead Developer"
-            },
-            {
-                "name": "Armin Ronacher",
-                "email": "armin.ronacher@active-4.com",
-                "role": "Project Founder"
-            },
-            {
-                "name": "Twig Team",
-                "homepage": "https://github.com/fabpot/Twig/graphs/contributors",
-                "role": "Contributors"
-            }
-        ],
-        "description": "Twig, the flexible, fast, and secure template language for PHP",
-        "homepage": "http://twig.sensiolabs.org",
-        "keywords": [
-            "templating"
         ]
     }
 ]

@@ -74,6 +74,12 @@ class ez_common extends CModule
                 $this->disablePhpConsole();
             }
 
+            if ($_REQUEST['enable_mailcatch'] == 'Y') {
+                $this->enableMailCatch();
+            } else {
+                $this->disableMailCatch();
+            }
+
             if($_REQUEST['enable_twig'] == 'Y') {
                 $this->enableTwig($_REQUEST['enable_twig_debug']);
             } else {
@@ -484,6 +490,16 @@ TEXT;
     private function disablePhpConsole()
     {
         COption::SetOptionString('ez.common','phpconsole','N');
+    }
+
+    private function enableMailcatch()
+    {
+        COption::SetOptionString('ez.common','mailcatch','Y');
+    }
+
+    private function disableMailcatch()
+    {
+        COption::SetOptionString('ez.common','mailcatch','N');
     }
 
     private function enableTwig($debug)

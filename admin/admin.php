@@ -34,6 +34,14 @@ $tabControl = new CAdminTabControl("tabControl", $aTabs);?>
         </td>
     </tr>
 
+    <tr valign="top">
+        <td width="40%" class="field-name">Перехват почты</td>
+        <td>
+            <?$mailcatch = COption::GetOptionString("ez.common", "mailcatch", "");?>
+            <input name="mailcatch" type="checkbox" value="Y" <?=$mailcatch == "Y"?"checked=\"checked\"":"";?>/>
+        </td>
+    </tr>
+
     <?
     $tabControl->EndTab();
     $tabControl->BeginNextTab();
