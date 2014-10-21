@@ -158,7 +158,7 @@ $APPLICATION->GetCurPage() ?>" name="ez_common_install">
         </tr>
         <tr>
             <td width="50%" align="right"><label for="enable_mailcatch">Перехватывать почту</a></label></td>
-            <td><input type="checkbox" name="enable_mailcatch" id="enable_mailcatch"></td>
+            <td><input type="checkbox" name="enable_mailcatch" id="enable_mailcatch" value="Y"></td>
         </tr>
     </table>
 
