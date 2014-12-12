@@ -14,7 +14,7 @@ class ShopsmapComponent extends \EzCommon\EzComponent
                 $arr['PROPERTIES']=$cib->GetProperties();
 
                 if($arr['PROPERTIES']['MAP']['VALUE']){
-                    $arResult['SHOPS'][$arr['PROPERTIES']['CITY']['VALUE']]['items'][]=array(
+                    $this->arResult['SHOPS'][$arr['PROPERTIES']['CITY']['VALUE']]['items'][]=array(
                         'id' => $arr['ID'],
                         'city'=>$arr['PROPERTIES']['CITY']['VALUE'],
                         'center'=>explode(',',$arr['PROPERTIES']['MAP']['VALUE']),
@@ -27,7 +27,7 @@ class ShopsmapComponent extends \EzCommon\EzComponent
             }
 
             foreach ($this->arResult['SHOPS'] as $city => $value) {
-                $arResult['SHOPS'][$city]['name']=$city;
+                $this->arResult['SHOPS'][$city]['name']=$city;
             }
 
 
@@ -55,7 +55,7 @@ class ShopsmapComponent extends \EzCommon\EzComponent
                 $json[]=$shop;
             }
 
-            $arResult['SHOPS'] = json_encode($json);
+            $this->arResult['SHOPS'] = json_encode($json);
 
             $this->IncludeComponentTemplate();
         }
