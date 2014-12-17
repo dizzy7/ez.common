@@ -78,5 +78,14 @@ function shopmap_init() {
     });
 
     // Выставляем масштаб карты чтобы были видны все группы.
-    myMap.setBounds(myMap.geoObjects.getBounds());
+    // Выставляем масштаб карты чтобы были видны все группы.
+    var bounds = myMap.geoObjects.getBounds();
+
+    if(bounds[0][0]==bounds[1][0] && bounds[0][1]==bounds[1][1]){
+        console.log(bounds[0]);
+        myMap.setCenter(bounds[0]);
+        myMap.setZoom(15);
+    } else {
+        myMap.setBounds(myMap.geoObjects.getBounds());
+    }
 }
